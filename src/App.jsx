@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ExternalLink, Mail } from 'lucide-react';
 
 const projects = [
   {
@@ -152,10 +152,10 @@ function App() {
           
           <div className="social-links">
             <a href="#" className="social-icon" aria-label="LinkedIn">
-              <Linkedin size={20} />
+              <span>IN</span>
             </a>
             <a href="#" className="social-icon" aria-label="Twitter">
-              <Twitter size={20} />
+              <span>X</span>
             </a>
             <a href="mailto:contact@musa-emon.com" className="social-icon" aria-label="Email">
               <Mail size={20} />
