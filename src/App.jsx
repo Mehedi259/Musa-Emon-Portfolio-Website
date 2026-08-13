@@ -132,7 +132,7 @@ function App() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <img 
-                src="/musa-emon.png" 
+                src="/musa-emon.jpeg" 
                 alt="Musa Emon" 
                 className="hero-image"
                 onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Musa+Emon&size=500&background=f1f5f9&color=0f172a' }}
