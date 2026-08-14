@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap } from 'lucide-react';
+import { ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, MessageCircle } from 'lucide-react';
 
 const projects = [
   {
@@ -281,7 +281,23 @@ function App() {
             </a>
           </div>
           
-          <p className="copyright" style={{ marginTop: '2rem' }}>© {new Date().getFullYear()} Musa Emon. Designed with precision.</p>
+          <div className="advertisement-contact" style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <h4 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Contact for Advertisement</h4>
+            <a 
+              href="https://wa.me/96878147442?text=I%20want%20to%20give%20an%20advertisement" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'var(--accent-highlight)' }}
+            >
+              <MessageCircle size={18} />
+              <span>+968 78147442 (WhatsApp)</span>
+            </a>
+          </div>
+          
+          <div style={{ marginTop: '2rem' }}>
+            <p className="copyright">© {new Date().getFullYear()} Musa Emon. Designed with precision.</p>
+            <p className="developer-credit" style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Developed by Hello Oman Tech</p>
+          </div>
         </div>
       </footer>
     </>
