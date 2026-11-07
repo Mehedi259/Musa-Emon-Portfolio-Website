@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
-  MessageCircle, ShieldCheck, LayoutDashboard, Radio, TrendingUp, 
-  ShoppingBag, BookOpen, Building, MapPin, Sparkles, CheckCircle2,
-  Layers, ChevronRight, Award
+  MessageCircle, Radio, ShoppingBag, BookOpen, Building, MapPin, 
+  Sparkles, Layers, Award
 } from 'lucide-react';
 
 // Custom SVG Icons for TikTok, Instagram, and Facebook
@@ -62,7 +61,7 @@ const socialLinks = [
   }
 ];
 
-// Ventures & Ecosystem Projects
+// Ventures & Ecosystem Projects (10 Live Platforms with real banner screenshots)
 const projects = [
   {
     id: 1,
@@ -71,11 +70,9 @@ const projects = [
     category: 'Travel & Tech',
     description: 'A full-cycle travel and aviation tech platform offering live Sabre GDS flight search, real-time fare revalidation, instant PNR generation, and automated visa processing.',
     link: 'https://musafly.com/',
-    adminLink: 'https://admin.musafly.com/',
     domain: 'musafly.com',
     image: '/musafly.png',
     icon: Globe,
-    gradient: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
     tags: ['Aviation Tech', 'Flight Booking', 'Sabre GDS', 'Visa Services'],
     featured: true
   },
@@ -86,10 +83,9 @@ const projects = [
     category: 'Media & News',
     description: 'The premier digital news and diaspora publication serving millions of expatriate Bangladeshis worldwide with verified daily journalism, policy guides, and expat welfare initiatives.',
     link: 'https://helloprobash.com/',
-    adminLink: 'https://admin.helloprobash.com/',
     domain: 'helloprobash.com',
+    image: '/helloprobash.png',
     icon: Radio,
-    gradient: 'linear-gradient(135deg, #065f46 0%, #10b981 100%)',
     tags: ['Global Diaspora', 'News Media', 'Community Hub', 'Publishing'],
     featured: true
   },
@@ -100,11 +96,9 @@ const projects = [
     category: 'Services & Education',
     description: 'A comprehensive multi-service citizen portal connecting expatriates with emergency helplines, legal aid, document processing, and community assistance overseas.',
     link: 'https://helloprobashsheba.com/',
-    adminLink: 'https://admin.helloprobashsheba.com/',
     domain: 'helloprobashsheba.com',
-    image: '/helloomansheba.png',
-    icon: ShieldCheck,
-    gradient: 'linear-gradient(135deg, #991b1b 0%, #ef4444 100%)',
+    image: '/helloprobashsheba.png',
+    icon: Users,
     tags: ['Expat Care', 'Emergency Helpline', 'Legal Support', 'Community'],
     featured: true
   },
@@ -117,90 +111,73 @@ const projects = [
     link: 'https://helloomantech.com/',
     altLink: 'https://probashtech.com',
     domain: 'helloomantech.com',
+    image: '/helloomantech.png',
     icon: Zap,
-    gradient: 'linear-gradient(135deg, #312e81 0%, #6366f1 100%)',
     tags: ['Software Studio', 'Cloud Systems', 'Full-Stack Apps', 'Digital Agency'],
     featured: true
   },
   {
     id: 5,
-    title: 'Probash Today',
-    tagline: 'Real-Time Digital News & Investigative Media',
-    category: 'Media & News',
-    description: 'Fast-moving digital news daily covering international remittances, diplomatic relations, migrant worker rights, and in-depth investigative reports.',
-    link: 'https://probashtoday.com/',
-    adminLink: 'https://probash-today-news-dashboard.vercel.app/login',
-    domain: 'probashtoday.com',
-    icon: TrendingUp,
-    gradient: 'linear-gradient(135deg, #9a3412 0%, #f97316 100%)',
-    tags: ['Breaking News', 'Remittance', 'Investigative', 'Journalism']
-  },
-  {
-    id: 6,
     title: 'ProbashMart',
     tagline: 'Cross-Border Marketplace & Ethnic Grocery Retail',
-    category: 'Travel & Tech',
+    category: 'Services & Education',
     description: 'A specialized international e-commerce marketplace delivering authentic homeland foods, ethnic groceries, and daily consumer essentials directly to diaspora doorsteps.',
     link: 'https://probashmart.com/',
-    adminLink: 'https://admin.probashmart.com/',
     domain: 'probashmart.com',
+    image: '/probashmart.png',
     icon: ShoppingBag,
-    gradient: 'linear-gradient(135deg, #115e59 0%, #14b8a6 100%)',
     tags: ['E-Commerce', 'Online Grocery', 'Retail Logistics', 'B2C']
   },
   {
-    id: 7,
+    id: 6,
     title: 'Probash Academy',
     tagline: 'Digital Skills & Vocational EdTech Platform',
     category: 'Services & Education',
     description: 'An online learning and vocational empowerment portal offering language proficiency, digital literacy, and career-advancement courses tailored for expatriates.',
     link: 'https://probashacademy.com/',
     domain: 'probashacademy.com',
+    image: '/probashacademy.png',
     icon: BookOpen,
-    gradient: 'linear-gradient(135deg, #581c87 0%, #a855f7 100%)',
     tags: ['EdTech', 'Language Courses', 'Skill Development', 'E-Learning']
   },
   {
-    id: 8,
+    id: 7,
     title: 'Hello Desh',
     tagline: 'National Media Network & Grassroots Portal',
     category: 'Media & News',
     description: 'A countrywide multimedia platform celebrating national heritage, grassroots development, local entrepreneurial stories, and socio-economic progress.',
     link: 'https://hellodesh.com/',
-    adminLink: 'https://admin.hellodesh.com/',
     domain: 'hellodesh.com',
+    image: '/hellodesh.png',
     icon: Building,
-    gradient: 'linear-gradient(135deg, #881337 0%, #f43f5e 100%)',
     tags: ['National Portal', 'Grassroots Stories', 'Cultural Heritage', 'Publishing']
   },
   {
-    id: 9,
+    id: 8,
     title: 'Hello Mirpur',
     tagline: 'Metropolitan Community Directory & Local Business Hub',
     category: 'Hyperlocal',
     description: 'A hyperlocal digital directory and commercial guide serving Dhaka’s Mirpur region with merchant listings, community events, civic announcements, and merchant discounts.',
     link: 'https://hellomirpur.com/',
-    adminLink: 'https://admin.hellomirpur.com/',
     domain: 'hellomirpur.com',
+    image: '/hellomirpur.png',
     icon: MapPin,
-    gradient: 'linear-gradient(135deg, #075985 0%, #0ea5e9 100%)',
     tags: ['Hyperlocal Hub', 'City Directory', 'Local Commerce', 'Events']
   },
   {
-    id: 10,
+    id: 9,
     title: 'Hello Nabiganj',
     tagline: 'Regional Diaspora Network & Community Hub',
     category: 'Hyperlocal',
     description: 'Uniting the passionate Nabiganj diaspora across the UK, Europe, and Middle East with regional developments, social welfare initiatives, and homeland projects.',
     link: 'https://hellonabiganj.com/',
-    adminLink: 'https://admin.hellonabiganj.com/',
     domain: 'hellonabiganj.com',
+    image: '/hellonabiganj.png',
     icon: Users,
-    gradient: 'linear-gradient(135deg, #155e75 0%, #06b6d4 100%)',
     tags: ['Regional Heritage', 'UK/EU Diaspora', 'Social Impact', 'Community Hub']
   },
   {
-    id: 11,
+    id: 10,
     title: 'Hello Oman Bangla',
     tagline: 'The Founding Expat Media Outlet in Oman',
     category: 'Media & News',
@@ -209,7 +186,6 @@ const projects = [
     domain: 'helloomanbangla.com',
     image: '/helloomanbangla.png',
     icon: Radio,
-    gradient: 'linear-gradient(135deg, #92400e 0%, #f59e0b 100%)',
     tags: ['Founding Venture', 'Sultanate of Oman', 'Expat Voice', 'Community Pillar']
   }
 ];
@@ -220,7 +196,7 @@ const experiences = [
     date: '2024 - Present',
     title: 'Founder & Group Ecosystem Architect',
     company: 'Hello Global Network & MusaFly',
-    description: 'Steering an interconnected ecosystem of 11+ digital platforms across travel tech, journalism, cross-border e-commerce, EdTech, and citizen service networks.'
+    description: 'Steering an interconnected ecosystem of 10+ digital platforms across travel tech, journalism, cross-border e-commerce, EdTech, and citizen service networks.'
   },
   {
     id: 2,
@@ -234,7 +210,7 @@ const experiences = [
     date: '2021 - Present',
     title: 'Founder & Managing Director',
     company: 'Hello Probash & Hello Sheba Group',
-    description: 'Built global expat support portals, digital technology agency (Hello Oman Tech), and specialized hyperlocal directories connecting hundreds of thousands.'
+    description: 'Built global expat support portals, digital technology studio (Hello Oman Tech), and specialized hyperlocal directories connecting hundreds of thousands.'
   },
   {
     id: 4,
@@ -246,7 +222,7 @@ const experiences = [
 ];
 
 const stats = [
-  { value: '11+', label: 'Live Digital Platforms', icon: Layers },
+  { value: '10+', label: 'Live Digital Platforms', icon: Layers },
   { value: '500K+', label: 'Global Expat Reach', icon: Users },
   { value: '100%', label: 'Cloud & Containerized Systems', icon: Zap },
   { value: '7+ Years', label: 'Ecosystem Leadership', icon: Award }
@@ -263,7 +239,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.08 }
   }
 };
 
@@ -293,7 +269,7 @@ function App() {
           </div>
           <div className="nav-links">
             <a href="#about">About</a>
-            <a href="#ventures">Ventures (11)</a>
+            <a href="#ventures">Ventures (10)</a>
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
@@ -342,7 +318,7 @@ function App() {
               
               <div className="hero-buttons">
                 <a href="#ventures" className="btn btn-primary">
-                  Explore 11 Ventures <ArrowUpRight size={18} />
+                  Explore 10 Ventures <ArrowUpRight size={18} />
                 </a>
                 <a href="#contact" className="btn btn-secondary">
                   Connect & Partner
@@ -381,7 +357,7 @@ function App() {
             >
               <div className="hero-image-badge">
                 <span className="badge-pulse"></span>
-                <span>Active Founder • 11+ Live Ventures</span>
+                <span>Active Founder • 10+ Live Ventures</span>
               </div>
               <img 
                 src="/musa-emon.jpeg" 
@@ -432,7 +408,7 @@ function App() {
                   Built & Scaled <span className="text-gradient">Platforms</span>
                 </h2>
                 <p>
-                  A cohesive digital empire of 11 live web applications, travel engines, and community platforms with dedicated admin dashboards.
+                  A cohesive digital empire of 10 live platforms, travel engines, e-commerce, and community networks serving users daily.
                 </p>
               </motion.div>
 
@@ -461,7 +437,6 @@ function App() {
             >
               <AnimatePresence mode="popLayout">
                 {filteredProjects.map((project) => {
-                  const Icon = project.icon;
                   return (
                     <motion.div 
                       key={project.id} 
@@ -473,42 +448,24 @@ function App() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {/* Card Header Media */}
-                      {project.image ? (
-                        <div className="project-image-container">
-                          <img src={project.image} alt={project.title} className="project-image" />
-                          <div className="project-image-overlay">
-                            <span className="live-pill">
-                              <span className="dot-pulse"></span> Live System
-                            </span>
-                            <span className="category-pill">{project.category}</span>
-                          </div>
+                      {/* Card Header Banner Image */}
+                      <div className="project-image-container">
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="project-image" 
+                          loading="lazy"
+                        />
+                        <div className="project-image-overlay">
+                          <span className="live-pill">
+                            <span className="dot-pulse"></span> Live Platform
+                          </span>
+                          <span className="domain-pill">
+                            <Globe size={11} />
+                            <span>{project.domain}</span>
+                          </span>
                         </div>
-                      ) : (
-                        <div className="project-mock-header" style={{ background: project.gradient }}>
-                          <div className="mock-window-bar">
-                            <div className="mock-dots">
-                              <span className="mock-dot red"></span>
-                              <span className="mock-dot yellow"></span>
-                              <span className="mock-dot green"></span>
-                            </div>
-                            <div className="mock-url">
-                              <Globe size={11} />
-                              <span>{project.domain}</span>
-                            </div>
-                            <span className="live-pill-sm">
-                              <span className="dot-pulse"></span>
-                            </span>
-                          </div>
-                          <div className="mock-brand-center">
-                            <div className="mock-brand-icon">
-                              <Icon size={32} />
-                            </div>
-                            <div className="mock-brand-title">{project.title}</div>
-                          </div>
-                          <Icon size={120} className="mock-watermark-icon" />
-                        </div>
-                      )}
+                      </div>
 
                       {/* Card Body Content */}
                       <div className="project-content">
@@ -529,7 +486,7 @@ function App() {
                           ))}
                         </div>
 
-                        {/* Action Buttons */}
+                        {/* Direct Action Links (No Admin Portal buttons) */}
                         <div className="project-actions">
                           <a 
                             href={project.link} 
@@ -537,22 +494,9 @@ function App() {
                             rel="noopener noreferrer" 
                             className="btn-project-link"
                           >
-                            <span>Live Website</span>
+                            <span>Visit Live Website</span>
                             <ExternalLink size={15} />
                           </a>
-
-                          {project.adminLink && (
-                            <a 
-                              href={project.adminLink} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="btn-project-admin"
-                              title="Live Admin Portal"
-                            >
-                              <LayoutDashboard size={14} />
-                              <span>Admin Portal</span>
-                            </a>
-                          )}
 
                           {project.altLink && (
                             <a 
@@ -563,7 +507,7 @@ function App() {
                               title="Alternative Gateway"
                             >
                               <ExternalLink size={14} />
-                              <span>ProbashTech</span>
+                              <span>ProbashTech.com</span>
                             </a>
                           )}
                         </div>
@@ -679,7 +623,7 @@ function App() {
           <span className="section-subtitle" style={{ color: 'var(--accent-highlight)' }}>GET IN TOUCH</span>
           <h2 className="text-gradient footer-headline">Let's Build & Partner</h2>
           <p className="footer-lead">
-            Whether exploring advertising across our 11 platforms, strategic partnerships, tech consulting, or global travel collaborations, I look forward to connecting.
+            Whether exploring advertising across our 10 platforms, strategic partnerships, tech consulting, or global travel collaborations, I look forward to connecting.
           </p>
           
           {/* Social Channels in Footer */}
@@ -707,7 +651,7 @@ function App() {
           {/* Direct WhatsApp Advertisement & Partnership Box */}
           <div className="advertisement-contact">
             <span className="ad-badge">Direct Business & Inquiries</span>
-            <h4>Advertise Across 11 Ecosystem Platforms</h4>
+            <h4>Advertise Across 10 Ecosystem Platforms</h4>
             <p>Reach over 500,000+ targeted expatriates and localized audiences across Oman, the GCC, and Bangladesh.</p>
             <a 
               href="https://wa.me/96878147442?text=I%20want%20to%20discuss%20advertising%20or%20partnership%20with%20Musa%20Emon" 
