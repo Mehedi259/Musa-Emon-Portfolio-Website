@@ -68,15 +68,14 @@ const socialLinks = [
   }
 ];
 
-// Unseen Bangladesh Style: Compact Social Media Spotlight Cards (4 Platforms: Facebook, TikTok, Instagram, YouTube)
+// Unseen Bangladesh Style: Social Media Spotlight Cards (4 Platforms: Facebook, TikTok, Instagram, YouTube)
 const socialShowcaseCards = [
   {
     id: 'facebook',
     platform: 'Facebook',
     handle: 'Musa Emon',
     metrics: '269K+ Followers',
-    subMetrics: '153K+ Talking About This',
-    status: 'Official Page',
+    subMetrics: '153K+ Engagement',
     icon: FacebookIcon,
     theme: 'card-fb',
     url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
@@ -90,21 +89,19 @@ const socialShowcaseCards = [
     handle: '@musa_emon',
     metrics: '248.4K Followers',
     subMetrics: '7.1M+ Total Likes',
-    status: 'Viral Creator',
     icon: TikTokIcon,
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
     actionText: 'Watch on TikTok',
     image: '/social-tiktok.jpg',
-    tag: '#MusaEmon'
+    tag: 'Viral Creator'
   },
   {
     id: 'instagram',
     platform: 'Instagram',
     handle: '@musa___emon',
     metrics: '920+ Followers',
-    subMetrics: '189+ Travel Posts & Stories',
-    status: 'Travel & Lifestyle',
+    subMetrics: '189+ Travel Posts',
     icon: InstagramIcon,
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
@@ -118,13 +115,12 @@ const socialShowcaseCards = [
     handle: '@musaemon',
     metrics: '1K+ Subscribers',
     subMetrics: 'Official Channel',
-    status: 'Official Channel',
     icon: YouTubeIcon,
     theme: 'card-yt',
     url: 'https://www.youtube.com/@musaemon',
     actionText: 'Subscribe on YT',
     image: '/social-musa-avatar.jpg',
-    tag: 'Expat Vlogs & Travel'
+    tag: 'Travel & Expat Vlogs'
   }
 ];
 
@@ -263,61 +259,49 @@ const travelDestinations = [
     id: 'uae',
     country: 'United Arab Emirates',
     flag: '🇦🇪',
-    location: 'Dubai & Abu Dhabi',
-    tag: 'Metropolis & Aviation',
-    caption: 'Iconic skylines, desert dunes, and the global aviation transit crossroads.',
-    image: '/travel/uae.jpg',
-    badge: 'GCC Transit'
+    location: 'Dubai Burj Khalifa',
+    year: '2023',
+    image: '/travel/uae.jpg'
   },
   {
     id: 'thailand',
     country: 'Thailand',
     flag: '🇹🇭',
-    location: 'Bangkok & Southern Coast',
-    tag: 'Culture & Island Life',
-    caption: 'Tropical archipelagos, ancient sanctuaries, floating markets, and Southeast Asian warmth.',
-    image: '/travel/thailand.jpg',
-    badge: 'Southeast Asia'
-  },
-  {
-    id: 'srilanka',
-    country: 'Sri Lanka',
-    flag: '🇱🇰',
-    location: 'Colombo & Galle Coast',
-    tag: 'Ocean Horizons',
-    caption: 'Lush tea plantations, colonial seaside fortresses, and endless Indian Ocean coastline.',
-    image: '/travel/srilanka.jpg',
-    badge: 'South Asia'
-  },
-  {
-    id: 'oman',
-    country: 'Sultanate of Oman',
-    flag: '🇴🇲',
-    location: 'Muscat & Salalah',
-    tag: 'Second Home & Hub',
-    caption: 'Arabian sea fjords, pristine desert wadis, and the headquarters of my digital ventures.',
-    image: '/travel/oman.jpg',
-    badge: 'Headquarters'
-  },
-  {
-    id: 'georgia',
-    country: 'Georgia',
-    flag: '🇬🇪',
-    location: 'Tbilisi & Caucasus Peaks',
-    tag: 'Eurasian Highlands',
-    caption: 'Snow-capped Caucasus summits, historic sulphur bath districts, and mountain fortresses.',
-    image: '/travel/georgia.jpg',
-    badge: 'Eurasia'
+    location: 'Thailand Pattaya Beach',
+    year: '2026',
+    image: '/travel/thailand.jpg'
   },
   {
     id: 'armenia',
     country: 'Armenia',
     flag: '🇦🇲',
-    location: 'Yerevan & Ararat Valley',
-    tag: 'Historic Transcaucasia',
-    caption: 'Monolithic medieval churches, dramatic mountain gorges, and millenniums of rich history.',
-    image: '/travel/armenia.jpg',
-    badge: 'Transcaucasia'
+    location: 'Armenia Yerevan',
+    year: '2025',
+    image: '/travel/armenia.jpg'
+  },
+  {
+    id: 'georgia',
+    country: 'Georgia',
+    flag: '🇬🇪',
+    location: 'Georgia Tbilisi',
+    year: '2025',
+    image: '/travel/georgia.jpg'
+  },
+  {
+    id: 'oman',
+    country: 'Sultanate of Oman',
+    flag: '🇴🇲',
+    location: 'Oman Al Suwaiq',
+    year: '2019',
+    image: '/travel/oman.jpg'
+  },
+  {
+    id: 'srilanka',
+    country: 'Sri Lanka',
+    flag: '🇱🇰',
+    location: 'Sri Lanka Galle Face',
+    year: '2025',
+    image: '/travel/srilanka.jpg'
   }
 ];
 
@@ -376,7 +360,7 @@ const experiences = [
 
 const stats = [
   { value: '10+', label: 'Live Digital Platforms', icon: Layers },
-  { value: '520K+', label: 'Global Audience Reach', icon: Users },
+  { value: '1M+', label: 'Global Audience Reach', icon: Users },
   { value: '100%', label: 'Cloud & Containerized Systems', icon: Zap },
   { value: '7+ Years', label: 'Ecosystem Leadership', icon: Award }
 ];
@@ -603,17 +587,17 @@ function App() {
                     <div className="social-card-inner">
                       <div className="social-card-top">
                         <div className="platform-badge">
-                          <Icon size={13} />
+                          <Icon size={14} />
                           <span>{card.platform}</span>
                         </div>
-                        <span className="status-pill">
-                          <span className="status-dot"></span> {card.status}
+                        <span className="status-dot-pill" title="Verified Active">
+                          <span className="status-dot"></span>
                         </span>
                       </div>
 
                       <div className="social-card-middle">
-                        <span className="social-card-tag">{card.tag}</span>
                         <div className="social-card-handle">{card.handle}</div>
+                        <div className="social-card-tag">{card.tag}</div>
                         <div className="social-stat-badge">
                           <span className="stat-primary">{card.metrics}</span>
                           <span className="stat-secondary">{card.subMetrics}</span>
@@ -684,13 +668,11 @@ function App() {
                         <span className="country-flag">{dest.flag}</span>
                         <span>{dest.country}</span>
                       </div>
-                      <span className="travel-year-badge">{dest.badge}</span>
+                      <span className="travel-year-badge">{dest.year}</span>
                     </div>
 
                     <div className="travel-card-bottom">
-                      <span className="travel-tag">{dest.tag}</span>
                       <h3 className="travel-location">{dest.location}</h3>
-                      <p className="travel-caption">{dest.caption}</p>
                     </div>
                   </div>
                 </motion.div>
