@@ -554,12 +554,12 @@ function App() {
                 <span>Active Founder • {projects.length}+ Live Ventures</span>
               </div>
               <img 
-                src="/musa-emon.webp" 
+                src="/musa-profile.webp" 
                 alt="Musa Emon" 
                 className="hero-image"
                 fetchPriority="high"
                 decoding="async"
-                onError={(e) => { e.target.src = '/musa-emon.jpeg'; }}
+                onError={(e) => { e.target.src = '/musa-profile.jpeg'; }}
               />
             </motion.div>
           </div>
