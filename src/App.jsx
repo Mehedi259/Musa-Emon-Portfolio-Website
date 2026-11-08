@@ -73,7 +73,7 @@ const socialShowcaseCards = [
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
     actionText: 'Watch on TikTok',
-    image: '/musa-emon.jpeg',
+    image: '/social-tiktok.jpg',
     tag: '#MusaEmon'
   },
   {
@@ -86,7 +86,7 @@ const socialShowcaseCards = [
     theme: 'card-fb',
     url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
     actionText: 'Connect on FB',
-    image: '/musa-emon.jpeg',
+    image: '/social-fb.jpg',
     tag: 'Daily Thoughts'
   },
   {
@@ -99,7 +99,7 @@ const socialShowcaseCards = [
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
     actionText: 'Follow on IG',
-    image: '/musa-emon.jpeg',
+    image: '/social-insta.jpg',
     tag: 'Visual Life'
   },
   {
@@ -112,7 +112,7 @@ const socialShowcaseCards = [
     theme: 'card-wa',
     url: 'https://wa.me/96878147442?text=Hello%20Musa%20Emon',
     actionText: 'Chat WhatsApp',
-    image: '/musa-emon.jpeg',
+    image: '/social-musa-avatar.jpg',
     tag: 'Direct Chat'
   },
   {
@@ -125,7 +125,7 @@ const socialShowcaseCards = [
     theme: 'card-community',
     url: '#ventures',
     actionText: 'Explore Network',
-    image: '/musa-emon.jpeg',
+    image: '/social-musa-channel-banner.jpg',
     tag: 'Global Hub'
   }
 ];

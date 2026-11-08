@@ -603,8 +603,9 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%;
   transition: transform 0.5s ease;
-  filter: contrast(1.05) brightness(0.9);
+  filter: contrast(1.05) brightness(0.92);
 }
 
 .social-showcase-card:hover .social-card-img {
