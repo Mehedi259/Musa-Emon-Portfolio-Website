@@ -217,18 +217,6 @@ const projects = [
   },
   {
     id: 8,
-    title: 'Hello Mirpur',
-    tagline: 'Metropolitan Community Directory & Local Business Hub',
-    category: 'Hyperlocal',
-    description: 'A hyperlocal digital directory and commercial guide serving Dhaka’s Mirpur region with merchant listings, community events, civic announcements, and merchant discounts.',
-    link: 'https://hellomirpur.com/',
-    domain: 'hellomirpur.com',
-    image: '/hellomirpur.png',
-    icon: MapPin,
-    tags: ['Hyperlocal Hub', 'City Directory', 'Local Commerce', 'Events']
-  },
-  {
-    id: 9,
     title: 'Hello Nabiganj',
     tagline: 'Regional Diaspora Network & Community Hub',
     category: 'Hyperlocal',
@@ -240,16 +228,16 @@ const projects = [
     tags: ['Regional Heritage', 'UK/EU Diaspora', 'Social Impact', 'Community Hub']
   },
   {
-    id: 10,
-    title: 'Hello Oman Bangla',
-    tagline: 'The Founding Expat Media Outlet in Oman',
+    id: 9,
+    title: 'Hello Malaysia Bangla',
+    tagline: 'Premier Expat Media & Community Portal in Malaysia',
     category: 'Media & News',
-    description: 'The foundation of the entire Hello Network—delivering dedicated Bengali news, lifestyle guides, and community solidarity across the Sultanate of Oman since 2019.',
-    link: 'https://helloomanbangla.com/',
-    domain: 'helloomanbangla.com',
-    image: '/helloomanbangla.png',
+    description: 'A dedicated digital journalism, migrant welfare, and community connection platform serving the vibrant Bangladeshi diaspora across Malaysia and Southeast Asia.',
+    link: 'https://hellomalaysiabangla.com/',
+    domain: 'hellomalaysiabangla.com',
+    image: '/hellomalaysiabangla.png',
     icon: Radio,
-    tags: ['Founding Venture', 'Sultanate of Oman', 'Expat Voice', 'Community Pillar']
+    tags: ['Southeast Asia', 'Malaysia Expat', 'Diaspora News', 'Community Voice']
   }
 ];
 
@@ -420,7 +408,7 @@ function App() {
             <a href="#about">About</a>
             <a href="#social">Social</a>
             <a href="#travel">Travel</a>
-            <a href="#ventures">Ventures (10)</a>
+            <a href="#ventures">Ventures ({projects.length})</a>
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
@@ -508,7 +496,7 @@ function App() {
             >
               <div className="hero-image-badge">
                 <span className="badge-pulse"></span>
-                <span>Active Founder • 10+ Live Ventures</span>
+                <span>Active Founder • {projects.length}+ Live Ventures</span>
               </div>
               <img 
                 src="/musa-emon.jpeg" 
@@ -691,7 +679,7 @@ function App() {
                   Built & Scaled <span className="text-gradient">Platforms</span>
                 </h2>
                 <p>
-                  A cohesive digital empire of 10 live platforms, travel engines, e-commerce, and community networks serving users daily.
+                  A cohesive digital empire of {projects.length} live platforms, travel engines, e-commerce, and community networks serving users daily.
                 </p>
               </motion.div>
 
@@ -851,7 +839,7 @@ function App() {
               <motion.div className="bento-item large" variants={fadeUpVariant}>
                 <div className="bento-icon"><Users size={28} /></div>
                 <h3>Hyperlocal & E-Commerce Operations</h3>
-                <p>Bridging local city hubs (Mirpur, Nabiganj) and building cross-border ethnic retail e-commerce (ProbashMart) alongside digital vocational academies (Probash Academy).</p>
+                <p>Bridging regional diaspora hubs (Nabiganj) and building cross-border ethnic retail e-commerce (ProbashMart) alongside digital vocational academies (Probash Academy).</p>
                 <div className="bento-footer-tags">
                   <span>ProbashMart</span>
                   <span>Probash Academy</span>
