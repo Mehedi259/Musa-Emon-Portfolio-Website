@@ -247,7 +247,7 @@ const travelDestinations = [
     id: 'uae',
     country: 'United Arab Emirates',
     flag: '🇦🇪',
-    location: 'Dubai Burj Khalifa',
+    location: 'Burj Khalifa, Dubai',
     year: '2023',
     image: '/travel/uae.jpg'
   },
@@ -255,7 +255,7 @@ const travelDestinations = [
     id: 'thailand',
     country: 'Thailand',
     flag: '🇹🇭',
-    location: 'Thailand Pattaya Beach',
+    location: 'Pattaya Beach',
     year: '2026',
     image: '/travel/thailand.jpg'
   },
@@ -263,7 +263,7 @@ const travelDestinations = [
     id: 'armenia',
     country: 'Armenia',
     flag: '🇦🇲',
-    location: 'Armenia Yerevan',
+    location: 'Yerevan',
     year: '2025',
     image: '/travel/armenia.jpg'
   },
@@ -271,7 +271,7 @@ const travelDestinations = [
     id: 'georgia',
     country: 'Georgia',
     flag: '🇬🇪',
-    location: 'Georgia Tbilisi',
+    location: 'Tbilisi',
     year: '2025',
     image: '/travel/georgia.jpg'
   },
@@ -279,7 +279,7 @@ const travelDestinations = [
     id: 'oman',
     country: 'Sultanate of Oman',
     flag: '🇴🇲',
-    location: 'Oman Al Suwaiq',
+    location: 'Al Suwaiq',
     year: '2019',
     image: '/travel/oman.jpg'
   },
@@ -287,7 +287,7 @@ const travelDestinations = [
     id: 'srilanka',
     country: 'Sri Lanka',
     flag: '🇱🇰',
-    location: 'Sri Lanka Galle Face',
+    location: 'Galle Face, Colombo',
     year: '2025',
     image: '/travel/srilanka.jpg'
   }
