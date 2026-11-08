@@ -511,36 +511,83 @@ ul {
 
 /* Social Showcase Section (Unseen Bangladesh style) */
 .social-showcase-section {
-  padding: 6rem 0;
+  padding: 3.5rem 0;
   background: white;
   position: relative;
-  overflow: hidden;
 }
 
+.social-header-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.social-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-top: 0.2rem;
+  line-height: 1.2;
+}
+
+.social-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.hint-arrow {
+  color: var(--accent-highlight);
+}
+
+/* Horizontal Track: Horizontal flex on mobile/tablet, Grid on desktop */
 .social-cards-track {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.4rem 0.2rem 1.2rem 0.2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
+.social-cards-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Compact Card (Height reduced to 215px - 235px) */
 .social-showcase-card {
   position: relative;
-  height: 380px;
-  border-radius: 22px;
+  flex: 0 0 195px;
+  width: 195px;
+  height: 225px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   background: #0f172a;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
   text-decoration: none;
+  scroll-snap-align: start;
 }
 
 .social-showcase-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 /* Background image & gradient overlay */
@@ -556,7 +603,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
   filter: contrast(1.05) brightness(0.9);
 }
 
@@ -567,7 +614,7 @@ ul {
 .social-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.5) 40%, rgba(15, 23, 42, 0.95) 85%, #0f172a 100%);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.6) 45%, rgba(15, 23, 42, 0.95) 85%, #0f172a 100%);
   z-index: 2;
 }
 
@@ -576,21 +623,21 @@ ul {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60%;
+  height: 55%;
   opacity: 0.15;
   transition: opacity 0.3s ease;
   z-index: 2;
 }
 
 .social-showcase-card:hover .social-card-platform-glow {
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 /* Card Content Overlay */
 .social-card-inner {
   position: relative;
   z-index: 3;
-  padding: 1.35rem;
+  padding: 0.95rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -608,74 +655,77 @@ ul {
 .platform-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.8rem;
+  gap: 0.35rem;
+  padding: 0.22rem 0.55rem;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   color: #0f172a;
-  font-size: 0.76rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
+  gap: 0.3rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 50px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.64rem;
   font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .status-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #10b981;
 }
 
 .social-card-middle {
   margin-top: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
 }
 
 .social-card-tag {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 0.35rem;
-  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.2px;
 }
 
 .social-card-handle {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.3px;
-  margin-bottom: 0.3rem;
-  line-height: 1.2;
+  margin-bottom: 0.2rem;
+  line-height: 1.15;
 }
 
 .social-card-title {
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .social-card-bottom {
-  padding-top: 0.85rem;
+  padding-top: 0.55rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -684,14 +734,14 @@ ul {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   transition: all 0.25s ease;
 }
 
@@ -711,7 +761,7 @@ ul {
 /* Individual Platform Themes */
 .card-tiktok:hover {
   border-color: #fe2c55;
-  box-shadow: 0 16px 32px -8px rgba(254, 44, 85, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(254, 44, 85, 0.35);
 }
 .card-tiktok .social-card-platform-glow {
   background: radial-gradient(circle at bottom, #fe2c55 0%, transparent 70%);
@@ -727,7 +777,7 @@ ul {
 
 .card-fb:hover {
   border-color: #1877f2;
-  box-shadow: 0 16px 32px -8px rgba(24, 119, 242, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(24, 119, 242, 0.35);
 }
 .card-fb .social-card-platform-glow {
   background: radial-gradient(circle at bottom, #1877f2 0%, transparent 70%);
@@ -743,7 +793,7 @@ ul {
 
 .card-insta:hover {
   border-color: #e1306c;
-  box-shadow: 0 16px 32px -8px rgba(225, 48, 108, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(225, 48, 108, 0.35);
 }
 .card-insta .social-card-platform-glow {
   background: radial-gradient(circle at bottom, #e1306c 0%, transparent 70%);
@@ -759,7 +809,7 @@ ul {
 
 .card-wa:hover {
   border-color: #25d366;
-  box-shadow: 0 16px 32px -8px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(37, 211, 102, 0.35);
 }
 .card-wa .social-card-platform-glow {
   background: radial-gradient(circle at bottom, #25d366 0%, transparent 70%);
@@ -775,7 +825,7 @@ ul {
 
 .card-community:hover {
   border-color: #3b82f6;
-  box-shadow: 0 16px 32px -8px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(59, 130, 246, 0.35);
 }
 .card-community .social-card-platform-glow {
   background: radial-gradient(circle at bottom, #3b82f6 0%, transparent 70%);
@@ -787,6 +837,58 @@ ul {
   background: #3b82f6;
   color: white;
   border-color: #3b82f6;
+}
+
+/* Desktop Grid View */
+@media (min-width: 1080px) {
+  .social-cards-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.15rem;
+    overflow-x: visible;
+    padding: 0.4rem 0;
+  }
+  .social-showcase-card {
+    flex: unset;
+    width: 100%;
+    height: 235px;
+  }
+  .social-scroll-hint {
+    display: none;
+  }
+}
+
+/* Mobile & Tablet Horizontal Scroll */
+@media (max-width: 768px) {
+  .social-showcase-section {
+    padding: 2.5rem 0;
+  }
+  .social-header-wrap {
+    margin-bottom: 1rem;
+  }
+  .social-main-title {
+    font-size: 1.7rem;
+  }
+  .social-cards-track {
+    margin: 0 -1.25rem;
+    padding: 0.4rem 1.25rem 1.25rem 1.25rem;
+    gap: 0.85rem;
+  }
+  .social-showcase-card {
+    flex: 0 0 175px;
+    width: 175px;
+    height: 215px;
+    border-radius: 16px;
+  }
+  .social-card-inner {
+    padding: 0.85rem;
+  }
+  .social-card-handle {
+    font-size: 0.96rem;
+  }
+  .social-card-title {
+    font-size: 0.72rem;
+  }
 }
 
 /* Category Filter Bar */

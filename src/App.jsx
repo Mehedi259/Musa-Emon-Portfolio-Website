@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
   MessageCircle, Radio, ShoppingBag, BookOpen, Building, MapPin, 
-  Sparkles, Layers, Award, CheckCircle2, TrendingUp, Flame
+  Sparkles, Layers, Award, ChevronRight
 } from 'lucide-react';
 
 // Custom SVG Icons for TikTok, Instagram, and Facebook
@@ -61,82 +61,72 @@ const socialLinks = [
   }
 ];
 
-// Unseen Bangladesh Style: Social Media Showcase Cards
+// Unseen Bangladesh Style: Compact Social Media Spotlight Cards (215px - 235px height)
 const socialShowcaseCards = [
   {
     id: 'tiktok',
     platform: 'TikTok',
     handle: '@musa_emon',
     title: 'Trending Short Videos & Expat Life',
-    subtitle: 'Lifestyle • Travel • Creator',
-    badgeText: 'Trending Creator',
     status: 'Viral',
     icon: TikTokIcon,
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
     actionText: 'Watch on TikTok',
     image: '/musa-emon.jpeg',
-    tag: '#MusaEmon #ExpatLife'
+    tag: '#MusaEmon'
   },
   {
     id: 'facebook',
     platform: 'Facebook',
     handle: 'Musa Emon',
     title: 'Personal Profile & Community Voice',
-    subtitle: 'Daily Updates • Insights • Thoughts',
-    badgeText: 'Personal Profile',
     status: 'Official',
     icon: FacebookIcon,
     theme: 'card-fb',
     url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
-    actionText: 'Connect on Facebook',
+    actionText: 'Connect on FB',
     image: '/musa-emon.jpeg',
-    tag: 'Daily Thoughts & Insights'
+    tag: 'Daily Thoughts'
   },
   {
     id: 'instagram',
     platform: 'Instagram',
     handle: '@musa___emon',
-    title: 'Moments, Lifestyle & Global Journeys',
-    subtitle: 'Aviation • GCC • Behind The Scenes',
-    badgeText: 'Visual Stories',
+    title: 'Moments, Lifestyle & Aviation',
     status: 'Stories',
     icon: InstagramIcon,
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
-    actionText: 'Follow on Instagram',
+    actionText: 'Follow on IG',
     image: '/musa-emon.jpeg',
-    tag: 'Aesthetic Highlights'
+    tag: 'Visual Life'
   },
   {
     id: 'whatsapp',
     platform: 'WhatsApp',
     handle: '+968 78147442',
     title: 'Direct Business & Inquiries Line',
-    subtitle: 'Sponsorships • Ads • Partnerships',
-    badgeText: 'Fast Response',
     status: 'Online',
     icon: MessageCircle,
     theme: 'card-wa',
     url: 'https://wa.me/96878147442?text=Hello%20Musa%20Emon',
-    actionText: 'Chat on WhatsApp',
+    actionText: 'Chat WhatsApp',
     image: '/musa-emon.jpeg',
-    tag: 'Instant Business Chat'
+    tag: 'Direct Chat'
   },
   {
     id: 'community',
     platform: 'Hello Network',
-    handle: '500,000+ Audience',
-    title: 'Global Diaspora Media Ecosystem',
-    subtitle: 'Oman • UAE • Bangladesh Diaspora',
-    badgeText: '10 Platforms',
+    handle: '500K+ Expat Hub',
+    title: '10 Platforms & Expat Diaspora',
     status: 'Verified',
     icon: Globe,
     theme: 'card-community',
     url: '#ventures',
-    actionText: 'Explore Ecosystem',
+    actionText: 'Explore Network',
     image: '/musa-emon.jpeg',
-    tag: 'Global Community'
+    tag: 'Global Hub'
   }
 ];
 
@@ -478,38 +468,32 @@ function App() {
           </div>
         </section>
 
-        {/* NEW: Unseen Bangladesh Style Social Media Spotlight Section */}
-        <section id="social" className="section social-showcase-section">
+        {/* Unseen Bangladesh Style: Social Media Spotlight Section (Compact & Swipeable) */}
+        <section id="social" className="social-showcase-section">
           <div className="container">
-            <div className="section-header">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
-                <span className="section-subtitle">SOCIAL SPOTLIGHT & PRESENCE</span>
-                <h2>
+            <div className="social-header-wrap">
+              <div className="social-title-left">
+                <span className="section-subtitle">SOCIAL SPOTLIGHT</span>
+                <h2 className="social-main-title">
                   সবার সাথে <span className="text-gradient">Musa Emon</span>
                 </h2>
-                <p>
-                  ফেসবুক, টিকটক, ইনস্টাগ্রাম ও হোয়াটসঅ্যাপে যুক্ত থাকুন আমার প্রতিদিনের আপডেট, চিন্তাভাবনা ও নতুন উদ্যোগের সাথে।
-                </p>
-              </motion.div>
+              </div>
+              <div className="social-scroll-hint">
+                <span>ডানে-বামে স্ক্রল করুন</span>
+                <ChevronRight size={15} className="hint-arrow" />
+              </div>
             </div>
 
-            <motion.div 
-              className="social-cards-track"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-            >
+            <div className="social-cards-track">
               {socialShowcaseCards.map((card) => {
                 const Icon = card.icon;
                 return (
-                  <motion.a 
+                  <a 
                     key={card.id}
                     href={card.url}
                     target={card.url.startsWith('http') ? "_blank" : "_self"}
                     rel="noopener noreferrer"
                     className={`social-showcase-card ${card.theme}`}
-                    variants={fadeUpVariant}
                   >
                     {/* Background image & gradient overlay */}
                     <div className="social-card-bg">
@@ -522,7 +506,7 @@ function App() {
                     <div className="social-card-inner">
                       <div className="social-card-top">
                         <div className="platform-badge">
-                          <Icon size={15} />
+                          <Icon size={13} />
                           <span>{card.platform}</span>
                         </div>
                         <span className="status-pill">
@@ -539,14 +523,14 @@ function App() {
                       <div className="social-card-bottom">
                         <div className="social-card-action">
                           <span>{card.actionText}</span>
-                          <ArrowUpRight size={15} className="action-arrow" />
+                          <ArrowUpRight size={13} className="action-arrow" />
                         </div>
                       </div>
                     </div>
-                  </motion.a>
+                  </a>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
         </section>
 
