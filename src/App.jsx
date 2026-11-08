@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
-  MessageCircle, Radio, ShoppingBag, BookOpen, Building, MapPin, 
-  Sparkles, Layers, Award, ChevronRight, Compass, Plane, Camera
+  Radio, ShoppingBag, BookOpen, Building, MapPin, 
+  Sparkles, Layers, Award, ChevronRight, Compass, Plane, Camera,
+  User, Home
 } from 'lucide-react';
 
 // Custom SVG Icons for Facebook, TikTok, Instagram, and YouTube
@@ -58,12 +59,6 @@ const socialLinks = [
     url: 'https://www.youtube.com/@musaemon',
     icon: YouTubeIcon,
     colorClass: 'social-yt'
-  },
-  {
-    name: 'WhatsApp',
-    url: 'https://wa.me/96878147442?text=Hello%20Musa%20Emon',
-    icon: MessageCircle,
-    colorClass: 'social-wa'
   },
   {
     name: 'Email',
@@ -121,8 +116,8 @@ const socialShowcaseCards = [
     id: 'youtube',
     platform: 'YouTube',
     handle: '@musaemon',
-    metrics: '7.76K+ Subscribers',
-    subMetrics: '100K+ Expat Network',
+    metrics: '1K+ Subscribers',
+    subMetrics: 'Official Channel',
     status: 'Official Channel',
     icon: YouTubeIcon,
     theme: 'card-yt',
@@ -381,7 +376,7 @@ const experiences = [
 
 const stats = [
   { value: '10+', label: 'Live Digital Platforms', icon: Layers },
-  { value: '500K+', label: 'Global Expat Reach', icon: Users },
+  { value: '520K+', label: 'Global Audience Reach', icon: Users },
   { value: '100%', label: 'Cloud & Containerized Systems', icon: Zap },
   { value: '7+ Years', label: 'Ecosystem Leadership', icon: Award }
 ];
@@ -404,12 +399,24 @@ const staggerContainer = {
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const sectionIds = ['about', 'social', 'travel', 'ventures', 'journey'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPosition) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -427,9 +434,9 @@ function App() {
           </div>
           <div className="nav-links">
             <a href="#about">About</a>
-            <a href="#social">Social Media</a>
-            <a href="#ventures">Ventures (10)</a>
+            <a href="#social">Social</a>
             <a href="#travel">Travel</a>
+            <a href="#ventures">Ventures (10)</a>
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
@@ -446,9 +453,6 @@ function App() {
             </a>
             <a href="https://www.youtube.com/@musaemon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="YouTube">
               <YouTubeIcon size={18} />
-            </a>
-            <a href="https://wa.me/96878147442?text=Hello%20Musa%20Emon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="WhatsApp">
-              <MessageCircle size={18} />
             </a>
           </div>
         </div>
@@ -568,11 +572,11 @@ function App() {
               <div className="social-title-left">
                 <span className="section-subtitle">SOCIAL SPOTLIGHT</span>
                 <h2 className="social-main-title">
-                  সবার সাথে <span className="text-gradient">Musa Emon</span>
+                  Connect with <span className="text-gradient">Musa Emon</span>
                 </h2>
               </div>
               <div className="social-scroll-hint">
-                <span>ডানে-বামে স্ক্রল করুন</span>
+                <span>Scroll or swipe to explore</span>
                 <ChevronRight size={15} className="hint-arrow" />
               </div>
             </div>
@@ -627,6 +631,71 @@ function App() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Global Travel & Expeditions Section */}
+        <section id="travel" className="section travel-section">
+          <div className="container">
+            <div className="section-header">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
+                <span className="section-subtitle">GLOBAL EXPEDITIONS & WANDERLUST</span>
+                <h2>
+                  World Traveler & <span className="text-gradient">Explorer</span>
+                </h2>
+                <p>
+                  Capturing international horizons, expat lifestyles, and cultural crossroads across the Middle East, Southeast Asia, and Eurasia.
+                </p>
+                <div className="travel-header-stats">
+                  <span className="travel-stat-pill">
+                    <Compass size={14} /> 10+ Countries Explored
+                  </span>
+                  <span className="travel-stat-pill">
+                    <Camera size={14} /> Licensed Influencer (L2644114)
+                  </span>
+                  <span className="travel-stat-pill">
+                    <Plane size={14} /> Travel & Aviation Specialist
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              className="travel-grid"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              {travelDestinations.map((dest) => (
+                <motion.div 
+                  key={dest.id} 
+                  className="travel-card"
+                  variants={fadeUpVariant}
+                >
+                  <div className="travel-card-bg">
+                    <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" />
+                    <div className="travel-card-overlay"></div>
+                  </div>
+
+                  <div className="travel-card-inner">
+                    <div className="travel-card-top">
+                      <div className="travel-country-pill">
+                        <span className="country-flag">{dest.flag}</span>
+                        <span>{dest.country}</span>
+                      </div>
+                      <span className="travel-year-badge">{dest.badge}</span>
+                    </div>
+
+                    <div className="travel-card-bottom">
+                      <span className="travel-tag">{dest.tag}</span>
+                      <h3 className="travel-location">{dest.location}</h3>
+                      <p className="travel-caption">{dest.caption}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -748,71 +817,6 @@ function App() {
                   );
                 })}
               </AnimatePresence>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Global Travel & Expeditions Section */}
-        <section id="travel" className="section travel-section">
-          <div className="container">
-            <div className="section-header">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
-                <span className="section-subtitle">GLOBAL EXPEDITIONS & WANDERLUST</span>
-                <h2>
-                  World Traveler & <span className="text-gradient">Explorer</span>
-                </h2>
-                <p>
-                  Capturing international horizons, expat lifestyles, and cultural crossroads across the Middle East, Southeast Asia, and Eurasia.
-                </p>
-                <div className="travel-header-stats">
-                  <span className="travel-stat-pill">
-                    <Compass size={14} /> 10+ Countries Explored
-                  </span>
-                  <span className="travel-stat-pill">
-                    <Camera size={14} /> Licensed Influencer (L2644114)
-                  </span>
-                  <span className="travel-stat-pill">
-                    <Plane size={14} /> Travel & Aviation Specialist
-                  </span>
-                </div>
-              </motion.div>
-            </div>
-
-            <motion.div 
-              className="travel-grid"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-            >
-              {travelDestinations.map((dest) => (
-                <motion.div 
-                  key={dest.id} 
-                  className="travel-card"
-                  variants={fadeUpVariant}
-                >
-                  <div className="travel-card-bg">
-                    <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" />
-                    <div className="travel-card-overlay"></div>
-                  </div>
-
-                  <div className="travel-card-inner">
-                    <div className="travel-card-top">
-                      <div className="travel-country-pill">
-                        <span className="country-flag">{dest.flag}</span>
-                        <span>{dest.country}</span>
-                      </div>
-                      <span className="travel-year-badge">{dest.badge}</span>
-                    </div>
-
-                    <div className="travel-card-bottom">
-                      <span className="travel-tag">{dest.tag}</span>
-                      <h3 className="travel-location">{dest.location}</h3>
-                      <p className="travel-caption">{dest.caption}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </motion.div>
           </div>
         </section>
@@ -950,21 +954,7 @@ function App() {
             </div>
           </div>
           
-          {/* Direct WhatsApp Advertisement & Partnership Box */}
-          <div className="advertisement-contact">
-            <span className="ad-badge">Direct Business & Inquiries</span>
-            <h4>Advertise Across 10 Ecosystem Platforms</h4>
-            <p>Reach over 500,000+ targeted expatriates and localized audiences across Oman, the GCC, and Bangladesh.</p>
-            <a 
-              href="https://wa.me/96878147442?text=I%20want%20to%20discuss%20advertising%20or%20partnership%20with%20Musa%20Emon" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-whatsapp"
-            >
-              <MessageCircle size={20} />
-              <span>Chat on WhatsApp: +968 78147442</span>
-            </a>
-          </div>
+
           
           <div className="footer-bottom">
             <p className="copyright">© {new Date().getFullYear()} Musa Emon. All rights reserved.</p>
@@ -974,6 +964,50 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Modern Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav" aria-label="Mobile Navigation">
+        <a 
+          href="#about" 
+          className={`mobile-nav-item ${activeSection === 'about' ? 'active' : ''}`}
+          onClick={() => setActiveSection('about')}
+        >
+          <User size={19} />
+          <span>About</span>
+        </a>
+        <a 
+          href="#social" 
+          className={`mobile-nav-item ${activeSection === 'social' ? 'active' : ''}`}
+          onClick={() => setActiveSection('social')}
+        >
+          <Sparkles size={19} />
+          <span>Social</span>
+        </a>
+        <a 
+          href="#travel" 
+          className={`mobile-nav-item ${activeSection === 'travel' ? 'active' : ''}`}
+          onClick={() => setActiveSection('travel')}
+        >
+          <Compass size={19} />
+          <span>Travel</span>
+        </a>
+        <a 
+          href="#ventures" 
+          className={`mobile-nav-item ${activeSection === 'ventures' ? 'active' : ''}`}
+          onClick={() => setActiveSection('ventures')}
+        >
+          <Layers size={19} />
+          <span>Ventures</span>
+        </a>
+        <a 
+          href="#journey" 
+          className={`mobile-nav-item ${activeSection === 'journey' ? 'active' : ''}`}
+          onClick={() => setActiveSection('journey')}
+        >
+          <Award size={19} />
+          <span>Journey</span>
+        </a>
+      </nav>
     </>
   );
 }
