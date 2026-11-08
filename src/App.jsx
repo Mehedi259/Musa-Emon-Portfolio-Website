@@ -74,8 +74,8 @@ const socialShowcaseCards = [
     id: 'facebook',
     platform: 'Facebook',
     handle: 'Musa Emon',
-    metrics: '269K+ Followers',
-    subMetrics: '153K+ Engagement',
+    metrics: '350K+ Followers',
+    subMetrics: '210K+ Engagement',
     icon: FacebookIcon,
     theme: 'card-fb',
     url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
@@ -87,8 +87,8 @@ const socialShowcaseCards = [
     id: 'tiktok',
     platform: 'TikTok',
     handle: '@musa_emon',
-    metrics: '248.4K Followers',
-    subMetrics: '7.1M+ Total Likes',
+    metrics: '290K+ Followers',
+    subMetrics: '8.5M+ Total Likes',
     icon: TikTokIcon,
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
@@ -100,8 +100,8 @@ const socialShowcaseCards = [
     id: 'instagram',
     platform: 'Instagram',
     handle: '@musa___emon',
-    metrics: '920+ Followers',
-    subMetrics: '189+ Travel Posts',
+    metrics: '15K+ Followers',
+    subMetrics: '250+ Travel Posts',
     icon: InstagramIcon,
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon/',
@@ -113,7 +113,7 @@ const socialShowcaseCards = [
     id: 'youtube',
     platform: 'YouTube',
     handle: '@Musaemonn',
-    metrics: '91K+ Subscribers',
+    metrics: '120K+ Subscribers',
     subMetrics: 'Official Channel',
     icon: YouTubeIcon,
     theme: 'card-yt',
@@ -403,7 +403,7 @@ const experiences = [
 
 const stats = [
   { value: '10+', label: 'Live Digital Platforms', icon: Layers },
-  { value: '1M+', label: 'Global Audience Reach', icon: Users },
+  { value: '1.5M+', label: 'Global Audience Reach', icon: Users },
   { value: '100%', label: 'Cloud & Containerized Systems', icon: Zap },
   { value: '7+ Years', label: 'Ecosystem Leadership', icon: Award }
 ];
@@ -1001,14 +1001,73 @@ function App() {
         {/* Journey Timeline Section */}
         <section id="journey" className="section bg-light">
           <div className="container">
-            <div className="section-header">
+            {/* Personal Story Showcase: From Construction Worker to Venture Builder */}
+            <div className="journey-story-card">
+              <div className="journey-story-header">
+                <span className="section-subtitle">THE STORY BEHIND THE ENTREPRENEUR</span>
+                <h2 className="journey-story-title">
+                  My <span className="text-gradient">Journey</span>
+                </h2>
+              </div>
+
+              <div className="journey-story-grid">
+                <div className="journey-story-media">
+                  <div className="journey-portrait-frame">
+                    <img 
+                      src="/social-insta.webp" 
+                      alt="Musa Emon Journey" 
+                      className="journey-portrait-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="journey-portrait-badge">
+                      <span className="portrait-year">2017 ➔ PRESENT</span>
+                      <span className="portrait-caption">From Oman construction worker to founder of 10+ digital ventures</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="journey-story-text">
+                  <p className="story-lead">
+                    Coming from a middle-class family, I always dreamed of achieving something big. But life took a different path. After dropping out of college, I moved to Oman in 2017 to support my family.
+                  </p>
+
+                  <p>
+                    I started my journey as a construction worker, facing the challenges of hard labour and a difficult life abroad. Looking for a way forward, I began creating YouTube videos. When my channel started generating income through monetization, I eventually left my job to pursue my passion.
+                  </p>
+
+                  <div className="journey-quote-highlight">
+                    <Sparkles size={20} className="quote-sparkle" />
+                    <blockquote>
+                      "That small beginning became the foundation of my entrepreneurial journey."
+                    </blockquote>
+                  </div>
+
+                  <p>
+                    Today, <strong>Alhamdulillah</strong>, I lead multiple digital ventures across Media, Travel & Tourism, and Technology.
+                  </p>
+
+                  <p>
+                    I am proud of how far I have come. Now, my greatest ambition is to create more opportunities and make a positive difference in people's lives.
+                  </p>
+
+                  <div className="journey-story-signature">
+                    <span className="signature-punchline">My journey continues...</span>
+                    <span className="signature-name">— Musa Emon</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Platform Milestones Roadmap Header */}
+            <div className="section-header timeline-header-wrap">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
-                <span className="section-subtitle">BUILDING PLATFORMS FROM THE GROUND UP</span>
+                <span className="section-subtitle">PLATFORM MILESTONES & ROADMAP</span>
                 <h2>
                   The Milestones of <span className="text-gradient">Building Platforms</span>
                 </h2>
                 <p>
-                  Musa Emon — Architecting and scaling ventures from grassroots ideas into resilient global ecosystems.
+                  Architecting and scaling ventures from grassroots ideas into resilient global ecosystems.
                 </p>
                 <div className="journey-dev-badge-wrap">
                   <span className="journey-dev-badge">

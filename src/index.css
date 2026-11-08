@@ -2090,6 +2090,164 @@ ul {
   cursor: pointer;
 }
 
+/* ==========================================================================
+   Personal Story Showcase: "My Journey" Card
+   ========================================================================== */
+.journey-story-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 28px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+  margin-bottom: 4rem;
+}
+
+.journey-story-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.journey-story-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 0.4rem;
+}
+
+.journey-story-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+.journey-portrait-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.journey-portrait-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.journey-portrait-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.92) 80%);
+  color: #ffffff;
+  padding: 1.5rem 1.1rem 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.portrait-year {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #f59e0b;
+  letter-spacing: 0.06em;
+}
+
+.portrait-caption {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.35;
+}
+
+.journey-story-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.story-lead {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.journey-quote-highlight {
+  background: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem 1.25rem;
+  border-radius: 0 14px 14px 0;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  margin: 0.25rem 0;
+}
+
+.quote-sparkle {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.journey-quote-highlight blockquote {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.journey-story-signature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.signature-punchline {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: 'Outfit', sans-serif;
+}
+
+.signature-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.timeline-header-wrap {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 850px) {
+  .journey-story-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+  }
+  .journey-story-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .journey-portrait-img {
+    height: 320px;
+  }
+  .journey-story-title {
+    font-size: 1.85rem;
+  }
+}
+
 /* Journey Developed by Probash Tech Badge */
 .journey-dev-badge-wrap {
   margin-top: 1rem;
