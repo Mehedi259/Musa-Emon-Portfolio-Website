@@ -4,7 +4,7 @@ import {
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
   Radio, ShoppingBag, BookOpen, Building, MapPin, 
   Sparkles, Layers, Award, ChevronRight, Compass, Plane, Camera,
-  User, Home
+  User, Home, Package, ArrowDown
 } from 'lucide-react';
 
 // Custom SVG Icons for Facebook, TikTok, Instagram, and YouTube
@@ -50,7 +50,7 @@ const socialLinks = [
   },
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
+    url: 'https://www.instagram.com/musa___emon/',
     icon: InstagramIcon,
     colorClass: 'social-insta'
   },
@@ -104,7 +104,7 @@ const socialShowcaseCards = [
     subMetrics: '189+ Travel Posts',
     icon: InstagramIcon,
     theme: 'card-insta',
-    url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
+    url: 'https://www.instagram.com/musa___emon/',
     actionText: 'Follow on IG',
     image: '/social-insta.webp',
     tag: 'Licensed Influencer'
@@ -113,7 +113,7 @@ const socialShowcaseCards = [
     id: 'youtube',
     platform: 'YouTube',
     handle: '@Musaemonn',
-    metrics: '7.76K Subscribers',
+    metrics: '91K+ Subscribers',
     subMetrics: 'Official Channel',
     icon: YouTubeIcon,
     theme: 'card-yt',
@@ -181,6 +181,21 @@ const projects = [
   },
   {
     id: 5,
+    title: 'Hello Carry',
+    tagline: 'Expat Luggage & Cross-Border Parcel Courier App',
+    category: 'Travel & Tech',
+    description: 'A specialized expatriate courier and baggage logistics mobile app facilitating cross-border parcel delivery, passenger excess baggage coordination, and doorstep deliveries between the GCC and Bangladesh.',
+    link: '#',
+    domain: 'hellocarry.app',
+    image: '/hellocarry.webp',
+    icon: Package,
+    tags: ['Courier Mobile App', 'Luggage Courier', 'Expat Logistics', 'In Development'],
+    isApp: true,
+    appStatus: 'App in Development',
+    featured: true
+  },
+  {
+    id: 6,
     title: 'Hello Probash Mart',
     tagline: 'Cross-Border Marketplace & Ethnic Grocery Retail',
     category: 'Services & Education',
@@ -192,7 +207,7 @@ const projects = [
     tags: ['E-Commerce', 'Online Grocery', 'Retail Logistics', 'B2C']
   },
   {
-    id: 6,
+    id: 7,
     title: 'Hello Probash Academy',
     tagline: 'Digital Skills & Vocational EdTech Platform',
     category: 'Services & Education',
@@ -204,7 +219,7 @@ const projects = [
     tags: ['EdTech', 'Language Courses', 'Skill Development', 'E-Learning']
   },
   {
-    id: 7,
+    id: 8,
     title: 'Hello Desh',
     tagline: 'National Media Network & Grassroots Portal',
     category: 'Media & News',
@@ -216,7 +231,7 @@ const projects = [
     tags: ['National Portal', 'Grassroots Stories', 'Cultural Heritage', 'Publishing']
   },
   {
-    id: 8,
+    id: 9,
     title: 'Hello Nabiganj',
     tagline: 'Regional Diaspora Network & Community Hub',
     category: 'Hyperlocal',
@@ -228,7 +243,7 @@ const projects = [
     tags: ['Regional Heritage', 'UK/EU Diaspora', 'Social Impact', 'Community Hub']
   },
   {
-    id: 9,
+    id: 10,
     title: 'Hello Malaysia Bangla',
     tagline: 'Premier Expat Media & Community Portal in Malaysia',
     category: 'Media & News',
@@ -290,6 +305,46 @@ const travelDestinations = [
     location: 'Galle Face, Colombo',
     year: '2025',
     image: '/travel/srilanka.webp'
+  }
+];
+
+// Future Expeditions & Planned Travels (Upcoming Horizons 2026-2027)
+const futureDestinations = [
+  {
+    id: 'saudi',
+    country: 'Saudi Arabia',
+    flag: '🇸🇦',
+    location: 'Mecca & Medina',
+    plannedDate: 'Upcoming 2026',
+    focus: 'Pilgrimage & Expat Community',
+    image: '/travel/future-saudi.webp'
+  },
+  {
+    id: 'malaysia',
+    country: 'Malaysia',
+    flag: '🇲🇾',
+    location: 'Kuala Lumpur & Langkawi',
+    plannedDate: 'Upcoming 2026',
+    focus: 'Southeast Asia Hub',
+    image: '/travel/future-malaysia.webp'
+  },
+  {
+    id: 'uk',
+    country: 'United Kingdom',
+    flag: '🇬🇧',
+    location: 'London & Birmingham',
+    plannedDate: 'Planned 2027',
+    focus: 'European Diaspora Network',
+    image: '/travel/future-uk.webp'
+  },
+  {
+    id: 'qatar',
+    country: 'Qatar',
+    flag: '🇶🇦',
+    location: 'Doha Corniche',
+    plannedDate: 'Upcoming 2026',
+    focus: 'Gulf Aviation Hub',
+    image: '/travel/future-qatar.webp'
   }
 ];
 
@@ -420,7 +475,7 @@ function App() {
             <a href="https://www.tiktok.com/@musa_emon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="TikTok">
               <TikTokIcon size={18} />
             </a>
-            <a href="https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Instagram">
+            <a href="https://www.instagram.com/musa___emon/" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Instagram">
               <InstagramIcon size={18} />
             </a>
             <a href="https://www.youtube.com/@Musaemonn" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="YouTube">
@@ -443,7 +498,7 @@ function App() {
             >
               <div className="hero-badge-wrap">
                 <span className="hero-badge">
-                  <Sparkles size={14} className="sparkle-icon" /> Serial Tech Entrepreneur & Ecosystem Founder
+                  <Sparkles size={14} className="sparkle-icon" /> FOUNDER • DIGITAL ENTREPRENEUR • MEDIA & TECHNOLOGY
                 </span>
               </div>
               
@@ -452,7 +507,7 @@ function App() {
               </h1>
               
               <p>
-                I architect and scale digital ecosystems that connect global diaspora communities, streamline travel tech with Sabre GDS, and empower millions of expats across the GCC and South Asia.
+                I build and lead digital ventures across Media, Travel & Tourism, and Technology. Through my growing ecosystem of brands, I connect global expatriate communities, simplify travel services, and create digital solutions that empower people and businesses across borders.
               </p>
               
               <div className="hero-buttons">
@@ -668,6 +723,62 @@ function App() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* Future Expeditions Sub-section */}
+            <div className="future-travel-section-wrap">
+              <div className="future-travel-title-wrap">
+                <span className="future-title-badge">
+                  <Plane size={14} /> UPCOMING EXPEDITIONS
+                </span>
+                <h3 className="future-main-heading">Planned Destinations & Next Horizons</h3>
+                <p className="future-sub-heading">Upcoming travels across cultural crossroads, pilgrimage heritage, and major diaspora corridors.</p>
+              </div>
+
+              <motion.div 
+                className="travel-grid future-travel-grid"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+              >
+                {futureDestinations.map((dest) => (
+                  <motion.div 
+                    key={dest.id} 
+                    className="travel-card future-card"
+                    variants={fadeUpVariant}
+                  >
+                    <div className="travel-card-bg">
+                      <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" decoding="async" />
+                      <div className="travel-card-overlay future-overlay"></div>
+                    </div>
+
+                    <div className="travel-card-inner">
+                      <div className="travel-card-top">
+                        <div className="travel-country-pill">
+                          <span className="country-flag">{dest.flag}</span>
+                          <span>{dest.country}</span>
+                        </div>
+                        <span className="travel-year-badge future-badge">{dest.plannedDate}</span>
+                      </div>
+
+                      <div className="travel-card-bottom">
+                        <h3 className="travel-location">{dest.location}</h3>
+                        <span className="future-focus-tag">{dest.focus}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* My Journey CTA Button */}
+            <div className="travel-journey-cta">
+              <a href="#journey" className="btn btn-primary btn-journey">
+                <Award size={18} />
+                <span>My Journey</span>
+                <ArrowDown size={16} />
+              </a>
+            </div>
           </div>
         </section>
 
@@ -722,24 +833,51 @@ function App() {
                       transition={{ duration: 0.3 }}
                     >
                       {/* Card Header Banner Image */}
-                      <div className="project-image-container">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="project-image" 
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        <div className="project-image-overlay">
-                          <span className="live-pill">
-                            <span className="dot-pulse"></span> Live Platform
-                          </span>
-                          <span className="domain-pill">
-                            <Globe size={11} />
-                            <span>{project.domain}</span>
-                          </span>
+                      {project.isApp ? (
+                        <div className="project-image-container">
+                          <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            className="project-image" 
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="project-image-overlay">
+                            <span className="live-pill app-pill">
+                              <span className="dot-pulse"></span> Mobile App
+                            </span>
+                            <span className="domain-pill">
+                              <Package size={11} />
+                              <span>{project.domain}</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
+                      ) : (
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="project-image-container is-clickable"
+                          title={`Visit ${project.title}`}
+                        >
+                          <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            className="project-image" 
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="project-image-overlay">
+                            <span className="live-pill">
+                              <span className="dot-pulse"></span> Live Platform
+                            </span>
+                            <span className="domain-pill">
+                              <Globe size={11} />
+                              <span>{project.domain}</span>
+                            </span>
+                          </div>
+                        </a>
+                      )}
 
                       {/* Card Body Content */}
                       <div className="project-content">
@@ -760,17 +898,24 @@ function App() {
                           ))}
                         </div>
 
-                        {/* Direct Action Links (No Admin Portal buttons) */}
+                        {/* Direct Action Links */}
                         <div className="project-actions">
-                          <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="btn-project-link"
-                          >
-                            <span>Visit Live Website</span>
-                            <ExternalLink size={15} />
-                          </a>
+                          {project.isApp ? (
+                            <div className="btn-project-link btn-app-status">
+                              <Package size={15} />
+                              <span>Mobile App • In Development</span>
+                            </div>
+                          ) : (
+                            <a 
+                              href={project.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="btn-project-link"
+                            >
+                              <span>Visit Live Website</span>
+                              <ExternalLink size={15} />
+                            </a>
+                          )}
 
                           {project.altLink && (
                             <a 
