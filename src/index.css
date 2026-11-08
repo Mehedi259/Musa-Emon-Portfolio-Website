@@ -509,6 +509,286 @@ ul {
   line-height: 1.7;
 }
 
+/* Social Showcase Section (Unseen Bangladesh style) */
+.social-showcase-section {
+  padding: 6rem 0;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-cards-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.social-showcase-card {
+  position: relative;
+  height: 380px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.08);
+  text-decoration: none;
+}
+
+.social-showcase-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Background image & gradient overlay */
+.social-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.social-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: contrast(1.05) brightness(0.9);
+}
+
+.social-showcase-card:hover .social-card-img {
+  transform: scale(1.08);
+}
+
+.social-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.5) 40%, rgba(15, 23, 42, 0.95) 85%, #0f172a 100%);
+  z-index: 2;
+}
+
+.social-card-platform-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.social-showcase-card:hover .social-card-platform-glow {
+  opacity: 0.35;
+}
+
+/* Card Content Overlay */
+.social-card-inner {
+  position: relative;
+  z-index: 3;
+  padding: 1.35rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.social-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: #0f172a;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.social-card-middle {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.social-card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.3px;
+}
+
+.social-card-handle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.3px;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.social-card-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.social-card-bottom {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.action-arrow {
+  transition: transform 0.25s ease;
+}
+
+.social-showcase-card:hover .social-card-action {
+  background: white;
+  color: #0f172a;
+}
+
+.social-showcase-card:hover .action-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Individual Platform Themes */
+.card-tiktok:hover {
+  border-color: #fe2c55;
+  box-shadow: 0 16px 32px -8px rgba(254, 44, 85, 0.35);
+}
+.card-tiktok .social-card-platform-glow {
+  background: radial-gradient(circle at bottom, #fe2c55 0%, transparent 70%);
+}
+.card-tiktok:hover .social-card-handle {
+  color: #25f4ee;
+}
+.card-tiktok:hover .social-card-action {
+  background: #fe2c55;
+  color: white;
+  border-color: #fe2c55;
+}
+
+.card-fb:hover {
+  border-color: #1877f2;
+  box-shadow: 0 16px 32px -8px rgba(24, 119, 242, 0.35);
+}
+.card-fb .social-card-platform-glow {
+  background: radial-gradient(circle at bottom, #1877f2 0%, transparent 70%);
+}
+.card-fb:hover .social-card-handle {
+  color: #60a5fa;
+}
+.card-fb:hover .social-card-action {
+  background: #1877f2;
+  color: white;
+  border-color: #1877f2;
+}
+
+.card-insta:hover {
+  border-color: #e1306c;
+  box-shadow: 0 16px 32px -8px rgba(225, 48, 108, 0.35);
+}
+.card-insta .social-card-platform-glow {
+  background: radial-gradient(circle at bottom, #e1306c 0%, transparent 70%);
+}
+.card-insta:hover .social-card-handle {
+  color: #f472b6;
+}
+.card-insta:hover .social-card-action {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  color: white;
+  border-color: #dc2743;
+}
+
+.card-wa:hover {
+  border-color: #25d366;
+  box-shadow: 0 16px 32px -8px rgba(37, 211, 102, 0.35);
+}
+.card-wa .social-card-platform-glow {
+  background: radial-gradient(circle at bottom, #25d366 0%, transparent 70%);
+}
+.card-wa:hover .social-card-handle {
+  color: #4ade80;
+}
+.card-wa:hover .social-card-action {
+  background: #25d366;
+  color: white;
+  border-color: #25d366;
+}
+
+.card-community:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 16px 32px -8px rgba(59, 130, 246, 0.35);
+}
+.card-community .social-card-platform-glow {
+  background: radial-gradient(circle at bottom, #3b82f6 0%, transparent 70%);
+}
+.card-community:hover .social-card-handle {
+  color: #93c5fd;
+}
+.card-community:hover .social-card-action {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
 /* Category Filter Bar */
 .filter-bar {
   display: flex;

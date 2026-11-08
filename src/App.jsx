@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
   MessageCircle, Radio, ShoppingBag, BookOpen, Building, MapPin, 
-  Sparkles, Layers, Award
+  Sparkles, Layers, Award, CheckCircle2, TrendingUp, Flame
 } from 'lucide-react';
 
 // Custom SVG Icons for TikTok, Instagram, and Facebook
@@ -27,7 +27,7 @@ const TikTokIcon = ({ size = 20, className = "" }) => (
   </svg>
 );
 
-// Musa Emon Official Social Channels
+// Quick Links for Navbar & Footer
 const socialLinks = [
   {
     name: 'Facebook',
@@ -58,6 +58,85 @@ const socialLinks = [
     url: 'mailto:musaemonn@gmail.com',
     icon: Mail,
     colorClass: 'social-mail'
+  }
+];
+
+// Unseen Bangladesh Style: Social Media Showcase Cards
+const socialShowcaseCards = [
+  {
+    id: 'tiktok',
+    platform: 'TikTok',
+    handle: '@musa_emon',
+    title: 'Trending Short Videos & Expat Life',
+    subtitle: 'Lifestyle • Travel • Creator',
+    badgeText: 'Trending Creator',
+    status: 'Viral',
+    icon: TikTokIcon,
+    theme: 'card-tiktok',
+    url: 'https://www.tiktok.com/@musa_emon',
+    actionText: 'Watch on TikTok',
+    image: '/musa-emon.jpeg',
+    tag: '#MusaEmon #ExpatLife'
+  },
+  {
+    id: 'facebook',
+    platform: 'Facebook',
+    handle: 'Musa Emon',
+    title: 'Personal Profile & Community Voice',
+    subtitle: 'Daily Updates • Insights • Thoughts',
+    badgeText: 'Personal Profile',
+    status: 'Official',
+    icon: FacebookIcon,
+    theme: 'card-fb',
+    url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
+    actionText: 'Connect on Facebook',
+    image: '/musa-emon.jpeg',
+    tag: 'Daily Thoughts & Insights'
+  },
+  {
+    id: 'instagram',
+    platform: 'Instagram',
+    handle: '@musa___emon',
+    title: 'Moments, Lifestyle & Global Journeys',
+    subtitle: 'Aviation • GCC • Behind The Scenes',
+    badgeText: 'Visual Stories',
+    status: 'Stories',
+    icon: InstagramIcon,
+    theme: 'card-insta',
+    url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
+    actionText: 'Follow on Instagram',
+    image: '/musa-emon.jpeg',
+    tag: 'Aesthetic Highlights'
+  },
+  {
+    id: 'whatsapp',
+    platform: 'WhatsApp',
+    handle: '+968 78147442',
+    title: 'Direct Business & Inquiries Line',
+    subtitle: 'Sponsorships • Ads • Partnerships',
+    badgeText: 'Fast Response',
+    status: 'Online',
+    icon: MessageCircle,
+    theme: 'card-wa',
+    url: 'https://wa.me/96878147442?text=Hello%20Musa%20Emon',
+    actionText: 'Chat on WhatsApp',
+    image: '/musa-emon.jpeg',
+    tag: 'Instant Business Chat'
+  },
+  {
+    id: 'community',
+    platform: 'Hello Network',
+    handle: '500,000+ Audience',
+    title: 'Global Diaspora Media Ecosystem',
+    subtitle: 'Oman • UAE • Bangladesh Diaspora',
+    badgeText: '10 Platforms',
+    status: 'Verified',
+    icon: Globe,
+    theme: 'card-community',
+    url: '#ventures',
+    actionText: 'Explore Ecosystem',
+    image: '/musa-emon.jpeg',
+    tag: 'Global Community'
   }
 ];
 
@@ -269,6 +348,7 @@ function App() {
           </div>
           <div className="nav-links">
             <a href="#about">About</a>
+            <a href="#social">Social Media</a>
             <a href="#ventures">Ventures (10)</a>
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
@@ -320,8 +400,8 @@ function App() {
                 <a href="#ventures" className="btn btn-primary">
                   Explore 10 Ventures <ArrowUpRight size={18} />
                 </a>
-                <a href="#contact" className="btn btn-secondary">
-                  Connect & Partner
+                <a href="#social" className="btn btn-secondary">
+                  Social Spotlight
                 </a>
               </div>
 
@@ -395,6 +475,78 @@ function App() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* NEW: Unseen Bangladesh Style Social Media Spotlight Section */}
+        <section id="social" className="section social-showcase-section">
+          <div className="container">
+            <div className="section-header">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
+                <span className="section-subtitle">SOCIAL SPOTLIGHT & PRESENCE</span>
+                <h2>
+                  সবার সাথে <span className="text-gradient">Musa Emon</span>
+                </h2>
+                <p>
+                  ফেসবুক, টিকটক, ইনস্টাগ্রাম ও হোয়াটসঅ্যাপে যুক্ত থাকুন আমার প্রতিদিনের আপডেট, চিন্তাভাবনা ও নতুন উদ্যোগের সাথে।
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              className="social-cards-track"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {socialShowcaseCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <motion.a 
+                    key={card.id}
+                    href={card.url}
+                    target={card.url.startsWith('http') ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className={`social-showcase-card ${card.theme}`}
+                    variants={fadeUpVariant}
+                  >
+                    {/* Background image & gradient overlay */}
+                    <div className="social-card-bg">
+                      <img src={card.image} alt={card.handle} className="social-card-img" />
+                      <div className="social-card-overlay"></div>
+                      <div className="social-card-platform-glow"></div>
+                    </div>
+
+                    {/* Card Content Overlay */}
+                    <div className="social-card-inner">
+                      <div className="social-card-top">
+                        <div className="platform-badge">
+                          <Icon size={15} />
+                          <span>{card.platform}</span>
+                        </div>
+                        <span className="status-pill">
+                          <span className="status-dot"></span> {card.status}
+                        </span>
+                      </div>
+
+                      <div className="social-card-middle">
+                        <span className="social-card-tag">{card.tag}</span>
+                        <div className="social-card-handle">{card.handle}</div>
+                        <h4 className="social-card-title">{card.title}</h4>
+                      </div>
+
+                      <div className="social-card-bottom">
+                        <div className="social-card-action">
+                          <span>{card.actionText}</span>
+                          <ArrowUpRight size={15} className="action-arrow" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.a>
+                );
+              })}
+            </motion.div>
           </div>
         </section>
 
