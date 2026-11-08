@@ -56,7 +56,7 @@ const socialLinks = [
   },
   {
     name: 'YouTube',
-    url: 'https://www.youtube.com/@musaemon',
+    url: 'https://www.youtube.com/@Musaemonn',
     icon: YouTubeIcon,
     colorClass: 'social-yt'
   },
@@ -80,7 +80,7 @@ const socialShowcaseCards = [
     theme: 'card-fb',
     url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
     actionText: 'Connect on FB',
-    image: '/social-fb.jpg',
+    image: '/social-fb.webp',
     tag: 'Digital Creator'
   },
   {
@@ -93,7 +93,7 @@ const socialShowcaseCards = [
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
     actionText: 'Watch on TikTok',
-    image: '/social-tiktok.jpg',
+    image: '/social-tiktok.webp',
     tag: 'Viral Creator'
   },
   {
@@ -106,20 +106,20 @@ const socialShowcaseCards = [
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
     actionText: 'Follow on IG',
-    image: '/social-insta.jpg',
+    image: '/social-insta.webp',
     tag: 'Licensed Influencer'
   },
   {
     id: 'youtube',
     platform: 'YouTube',
-    handle: '@musaemon',
-    metrics: '1K+ Subscribers',
+    handle: '@Musaemonn',
+    metrics: '7.76K Subscribers',
     subMetrics: 'Official Channel',
     icon: YouTubeIcon,
     theme: 'card-yt',
-    url: 'https://www.youtube.com/@musaemon',
+    url: 'https://www.youtube.com/@Musaemonn',
     actionText: 'Subscribe on YT',
-    image: '/social-musa-avatar.jpg',
+    image: '/social-youtube.webp',
     tag: 'Travel & Expat Vlogs'
   }
 ];
@@ -134,7 +134,7 @@ const projects = [
     description: 'A full-cycle travel and aviation tech platform offering live Sabre GDS flight search, real-time fare revalidation, instant PNR generation, and automated visa processing.',
     link: 'https://musafly.com/',
     domain: 'musafly.com',
-    image: '/musafly.png',
+    image: '/musafly.webp',
     icon: Globe,
     tags: ['Aviation Tech', 'Flight Booking', 'Sabre GDS', 'Visa Services'],
     featured: true
@@ -147,7 +147,7 @@ const projects = [
     description: 'The premier digital news and diaspora publication serving millions of expatriate Bangladeshis worldwide with verified daily journalism, policy guides, and expat welfare initiatives.',
     link: 'https://helloprobash.com/',
     domain: 'helloprobash.com',
-    image: '/helloprobash.png',
+    image: '/helloprobash.webp',
     icon: Radio,
     tags: ['Global Diaspora', 'News Media', 'Community Hub', 'Publishing'],
     featured: true
@@ -160,46 +160,46 @@ const projects = [
     description: 'A comprehensive multi-service citizen portal connecting expatriates with emergency helplines, legal aid, document processing, and community assistance overseas.',
     link: 'https://helloprobashsheba.com/',
     domain: 'helloprobashsheba.com',
-    image: '/helloprobashsheba.png',
+    image: '/helloprobashsheba.webp',
     icon: Users,
     tags: ['Expat Care', 'Emergency Helpline', 'Legal Support', 'Community'],
     featured: true
   },
   {
     id: 4,
-    title: 'Hello Oman Tech',
+    title: 'Hello Probash Tech',
     tagline: 'Enterprise Digital Agency & Engineering Studio',
     category: 'Travel & Tech',
     description: 'Full-cycle software engineering and digital transformation studio architecting high-performance web applications, mobile platforms, and cloud systems across the GCC and South Asia.',
-    link: 'https://helloomantech.com/',
-    altLink: 'https://probashtech.com',
-    domain: 'helloomantech.com',
-    image: '/helloomantech.png',
+    link: 'https://probashtech.com',
+    altLink: 'https://helloomantech.com/',
+    domain: 'probashtech.com',
+    image: '/probashtech.webp',
     icon: Zap,
     tags: ['Software Studio', 'Cloud Systems', 'Full-Stack Apps', 'Digital Agency'],
     featured: true
   },
   {
     id: 5,
-    title: 'ProbashMart',
+    title: 'Hello Probash Mart',
     tagline: 'Cross-Border Marketplace & Ethnic Grocery Retail',
     category: 'Services & Education',
     description: 'A specialized international e-commerce marketplace delivering authentic homeland foods, ethnic groceries, and daily consumer essentials directly to diaspora doorsteps.',
     link: 'https://probashmart.com/',
     domain: 'probashmart.com',
-    image: '/probashmart.png',
+    image: '/probashmart.webp',
     icon: ShoppingBag,
     tags: ['E-Commerce', 'Online Grocery', 'Retail Logistics', 'B2C']
   },
   {
     id: 6,
-    title: 'Probash Academy',
+    title: 'Hello Probash Academy',
     tagline: 'Digital Skills & Vocational EdTech Platform',
     category: 'Services & Education',
     description: 'An online learning and vocational empowerment portal offering language proficiency, digital literacy, and career-advancement courses tailored for expatriates.',
     link: 'https://probashacademy.com/',
     domain: 'probashacademy.com',
-    image: '/probashacademy.png',
+    image: '/probashacademy.webp',
     icon: BookOpen,
     tags: ['EdTech', 'Language Courses', 'Skill Development', 'E-Learning']
   },
@@ -211,7 +211,7 @@ const projects = [
     description: 'A countrywide multimedia platform celebrating national heritage, grassroots development, local entrepreneurial stories, and socio-economic progress.',
     link: 'https://hellodesh.com/',
     domain: 'hellodesh.com',
-    image: '/hellodesh.png',
+    image: '/hellodesh.webp',
     icon: Building,
     tags: ['National Portal', 'Grassroots Stories', 'Cultural Heritage', 'Publishing']
   },
@@ -223,7 +223,7 @@ const projects = [
     description: 'Uniting the passionate Nabiganj diaspora across the UK, Europe, and Middle East with regional developments, social welfare initiatives, and homeland projects.',
     link: 'https://hellonabiganj.com/',
     domain: 'hellonabiganj.com',
-    image: '/hellonabiganj.png',
+    image: '/hellonabiganj.webp',
     icon: Users,
     tags: ['Regional Heritage', 'UK/EU Diaspora', 'Social Impact', 'Community Hub']
   },
@@ -235,7 +235,7 @@ const projects = [
     description: 'A dedicated digital journalism, migrant welfare, and community connection platform serving the vibrant Bangladeshi diaspora across Malaysia and Southeast Asia.',
     link: 'https://hellomalaysiabangla.com/',
     domain: 'hellomalaysiabangla.com',
-    image: '/hellomalaysiabangla.png',
+    image: '/hellomalaysiabangla.webp',
     icon: Radio,
     tags: ['Southeast Asia', 'Malaysia Expat', 'Diaspora News', 'Community Voice']
   }
@@ -249,7 +249,7 @@ const travelDestinations = [
     flag: '🇦🇪',
     location: 'Burj Khalifa, Dubai',
     year: '2023',
-    image: '/travel/uae.jpg'
+    image: '/travel/uae.webp'
   },
   {
     id: 'thailand',
@@ -257,7 +257,7 @@ const travelDestinations = [
     flag: '🇹🇭',
     location: 'Pattaya Beach',
     year: '2026',
-    image: '/travel/thailand.jpg'
+    image: '/travel/thailand.webp'
   },
   {
     id: 'armenia',
@@ -265,7 +265,7 @@ const travelDestinations = [
     flag: '🇦🇲',
     location: 'Yerevan',
     year: '2025',
-    image: '/travel/armenia.jpg'
+    image: '/travel/armenia.webp'
   },
   {
     id: 'georgia',
@@ -273,7 +273,7 @@ const travelDestinations = [
     flag: '🇬🇪',
     location: 'Tbilisi',
     year: '2025',
-    image: '/travel/georgia.jpg'
+    image: '/travel/georgia.webp'
   },
   {
     id: 'oman',
@@ -281,7 +281,7 @@ const travelDestinations = [
     flag: '🇴🇲',
     location: 'Al Suwaiq',
     year: '2019',
-    image: '/travel/oman.jpg'
+    image: '/travel/oman.webp'
   },
   {
     id: 'srilanka',
@@ -289,7 +289,7 @@ const travelDestinations = [
     flag: '🇱🇰',
     location: 'Galle Face, Colombo',
     year: '2025',
-    image: '/travel/srilanka.jpg'
+    image: '/travel/srilanka.webp'
   }
 ];
 
@@ -423,7 +423,7 @@ function App() {
             <a href="https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="https://www.youtube.com/@musaemon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="YouTube">
+            <a href="https://www.youtube.com/@Musaemonn" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="YouTube">
               <YouTubeIcon size={18} />
             </a>
           </div>
@@ -499,10 +499,12 @@ function App() {
                 <span>Active Founder • {projects.length}+ Live Ventures</span>
               </div>
               <img 
-                src="/musa-emon.jpeg" 
+                src="/musa-emon.webp" 
                 alt="Musa Emon" 
                 className="hero-image"
-                onError={(e) => { e.target.src = '/musa-emon.png'; }}
+                fetchPriority="high"
+                decoding="async"
+                onError={(e) => { e.target.src = '/musa-emon.jpeg'; }}
               />
             </motion.div>
           </div>
@@ -566,7 +568,7 @@ function App() {
                   >
                     {/* Background image & gradient overlay */}
                     <div className="social-card-bg">
-                      <img src={card.image} alt={card.handle} className="social-card-img" />
+                      <img src={card.image} alt={card.handle} className="social-card-img" loading="lazy" decoding="async" />
                       <div className="social-card-overlay"></div>
                       <div className="social-card-platform-glow"></div>
                     </div>
@@ -646,7 +648,7 @@ function App() {
                   variants={fadeUpVariant}
                 >
                   <div className="travel-card-bg">
-                    <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" />
+                    <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" decoding="async" />
                     <div className="travel-card-overlay"></div>
                   </div>
 
@@ -726,6 +728,7 @@ function App() {
                           alt={project.title} 
                           className="project-image" 
                           loading="lazy"
+                          decoding="async"
                         />
                         <div className="project-image-overlay">
                           <span className="live-pill">
@@ -839,10 +842,10 @@ function App() {
               <motion.div className="bento-item large" variants={fadeUpVariant}>
                 <div className="bento-icon"><Users size={28} /></div>
                 <h3>Hyperlocal & E-Commerce Operations</h3>
-                <p>Bridging regional diaspora hubs (Nabiganj) and building cross-border ethnic retail e-commerce (ProbashMart) alongside digital vocational academies (Probash Academy).</p>
+                <p>Bridging regional diaspora hubs (Nabiganj) and building cross-border ethnic retail e-commerce (Hello Probash Mart) alongside digital vocational academies (Hello Probash Academy).</p>
                 <div className="bento-footer-tags">
-                  <span>ProbashMart</span>
-                  <span>Probash Academy</span>
+                  <span>Hello Probash Mart</span>
+                  <span>Hello Probash Academy</span>
                   <span>Hyperlocal Networks</span>
                 </div>
               </motion.div>
