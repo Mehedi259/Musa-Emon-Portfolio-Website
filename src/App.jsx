@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
   MessageCircle, Radio, ShoppingBag, BookOpen, Building, MapPin, 
-  Sparkles, Layers, Award, ChevronRight
+  Sparkles, Layers, Award, ChevronRight, Compass, Plane, Camera
 } from 'lucide-react';
 
-// Custom SVG Icons for TikTok, Instagram, and Facebook
+// Custom SVG Icons for Facebook, TikTok, Instagram, and YouTube
 const FacebookIcon = ({ size = 20, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -27,6 +27,12 @@ const TikTokIcon = ({ size = 20, className = "" }) => (
   </svg>
 );
 
+const YouTubeIcon = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
 // Quick Links for Navbar & Footer
 const socialLinks = [
   {
@@ -36,16 +42,22 @@ const socialLinks = [
     colorClass: 'social-fb'
   },
   {
+    name: 'TikTok',
+    url: 'https://www.tiktok.com/@musa_emon',
+    icon: TikTokIcon,
+    colorClass: 'social-tiktok'
+  },
+  {
     name: 'Instagram',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
     icon: InstagramIcon,
     colorClass: 'social-insta'
   },
   {
-    name: 'TikTok',
-    url: 'https://www.tiktok.com/@musa_emon',
-    icon: TikTokIcon,
-    colorClass: 'social-tiktok'
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@musaemon',
+    icon: YouTubeIcon,
+    colorClass: 'social-yt'
   },
   {
     name: 'WhatsApp',
@@ -61,14 +73,29 @@ const socialLinks = [
   }
 ];
 
-// Unseen Bangladesh Style: Compact Social Media Spotlight Cards (215px - 235px height)
+// Unseen Bangladesh Style: Compact Social Media Spotlight Cards (4 Platforms: Facebook, TikTok, Instagram, YouTube)
 const socialShowcaseCards = [
+  {
+    id: 'facebook',
+    platform: 'Facebook',
+    handle: 'Musa Emon',
+    metrics: '269K+ Followers',
+    subMetrics: '153K+ Talking About This',
+    status: 'Official Page',
+    icon: FacebookIcon,
+    theme: 'card-fb',
+    url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
+    actionText: 'Connect on FB',
+    image: '/social-fb.jpg',
+    tag: 'Digital Creator'
+  },
   {
     id: 'tiktok',
     platform: 'TikTok',
     handle: '@musa_emon',
-    title: 'Trending Short Videos & Expat Life',
-    status: 'Viral',
+    metrics: '248.4K Followers',
+    subMetrics: '7.1M+ Total Likes',
+    status: 'Viral Creator',
     icon: TikTokIcon,
     theme: 'card-tiktok',
     url: 'https://www.tiktok.com/@musa_emon',
@@ -77,56 +104,32 @@ const socialShowcaseCards = [
     tag: '#MusaEmon'
   },
   {
-    id: 'facebook',
-    platform: 'Facebook',
-    handle: 'Musa Emon',
-    title: 'Personal Profile & Community Voice',
-    status: 'Official',
-    icon: FacebookIcon,
-    theme: 'card-fb',
-    url: 'https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr',
-    actionText: 'Connect on FB',
-    image: '/social-fb.jpg',
-    tag: 'Daily Thoughts'
-  },
-  {
     id: 'instagram',
     platform: 'Instagram',
     handle: '@musa___emon',
-    title: 'Moments, Lifestyle & Aviation',
-    status: 'Stories',
+    metrics: '920+ Followers',
+    subMetrics: '189+ Travel Posts & Stories',
+    status: 'Travel & Lifestyle',
     icon: InstagramIcon,
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr',
     actionText: 'Follow on IG',
     image: '/social-insta.jpg',
-    tag: 'Visual Life'
+    tag: 'Licensed Influencer'
   },
   {
-    id: 'whatsapp',
-    platform: 'WhatsApp',
-    handle: '+968 78147442',
-    title: 'Direct Business & Inquiries Line',
-    status: 'Online',
-    icon: MessageCircle,
-    theme: 'card-wa',
-    url: 'https://wa.me/96878147442?text=Hello%20Musa%20Emon',
-    actionText: 'Chat WhatsApp',
+    id: 'youtube',
+    platform: 'YouTube',
+    handle: '@musaemon',
+    metrics: '7.76K+ Subscribers',
+    subMetrics: '100K+ Expat Network',
+    status: 'Official Channel',
+    icon: YouTubeIcon,
+    theme: 'card-yt',
+    url: 'https://www.youtube.com/@musaemon',
+    actionText: 'Subscribe on YT',
     image: '/social-musa-avatar.jpg',
-    tag: 'Direct Chat'
-  },
-  {
-    id: 'community',
-    platform: 'Hello Network',
-    handle: '500K+ Expat Hub',
-    title: '10 Platforms & Expat Diaspora',
-    status: 'Verified',
-    icon: Globe,
-    theme: 'card-community',
-    url: '#ventures',
-    actionText: 'Explore Network',
-    image: '/social-musa-channel-banner.jpg',
-    tag: 'Global Hub'
+    tag: 'Expat Vlogs & Travel'
   }
 ];
 
@@ -259,34 +262,120 @@ const projects = [
   }
 ];
 
+// Real Travel & Expedition Photos
+const travelDestinations = [
+  {
+    id: 'uae',
+    country: 'United Arab Emirates',
+    flag: '🇦🇪',
+    location: 'Dubai & Abu Dhabi',
+    tag: 'Metropolis & Aviation',
+    caption: 'Iconic skylines, desert dunes, and the global aviation transit crossroads.',
+    image: '/travel/uae.jpg',
+    badge: 'GCC Transit'
+  },
+  {
+    id: 'thailand',
+    country: 'Thailand',
+    flag: '🇹🇭',
+    location: 'Bangkok & Southern Coast',
+    tag: 'Culture & Island Life',
+    caption: 'Tropical archipelagos, ancient sanctuaries, floating markets, and Southeast Asian warmth.',
+    image: '/travel/thailand.jpg',
+    badge: 'Southeast Asia'
+  },
+  {
+    id: 'srilanka',
+    country: 'Sri Lanka',
+    flag: '🇱🇰',
+    location: 'Colombo & Galle Coast',
+    tag: 'Ocean Horizons',
+    caption: 'Lush tea plantations, colonial seaside fortresses, and endless Indian Ocean coastline.',
+    image: '/travel/srilanka.jpg',
+    badge: 'South Asia'
+  },
+  {
+    id: 'oman',
+    country: 'Sultanate of Oman',
+    flag: '🇴🇲',
+    location: 'Muscat & Salalah',
+    tag: 'Second Home & Hub',
+    caption: 'Arabian sea fjords, pristine desert wadis, and the headquarters of my digital ventures.',
+    image: '/travel/oman.jpg',
+    badge: 'Headquarters'
+  },
+  {
+    id: 'georgia',
+    country: 'Georgia',
+    flag: '🇬🇪',
+    location: 'Tbilisi & Caucasus Peaks',
+    tag: 'Eurasian Highlands',
+    caption: 'Snow-capped Caucasus summits, historic sulphur bath districts, and mountain fortresses.',
+    image: '/travel/georgia.jpg',
+    badge: 'Eurasia'
+  },
+  {
+    id: 'armenia',
+    country: 'Armenia',
+    flag: '🇦🇲',
+    location: 'Yerevan & Ararat Valley',
+    tag: 'Historic Transcaucasia',
+    caption: 'Monolithic medieval churches, dramatic mountain gorges, and millenniums of rich history.',
+    image: '/travel/armenia.jpg',
+    badge: 'Transcaucasia'
+  }
+];
+
+// Milestones of Building Platforms from the Ground Up (Developed by Probash Tech)
 const experiences = [
   {
     id: 1,
-    date: '2024 - Present',
-    title: 'Founder & Group Ecosystem Architect',
-    company: 'Hello Global Network & MusaFly',
-    description: 'Steering an interconnected ecosystem of 10+ digital platforms across travel tech, journalism, cross-border e-commerce, EdTech, and citizen service networks.'
+    date: '2021',
+    title: 'Founder & CEO',
+    company: 'MusaFly (musafly.com)',
+    description: 'Launched a modern aviation tech and flight reservation platform featuring Sabre GDS flight search, automated fare revalidation, and instant visa processing.'
   },
   {
     id: 2,
-    date: '2023 - Present',
-    title: 'Founder & CEO',
-    company: 'MusaFly (musafly.com)',
-    description: 'Architected and scaled a modern travel platform with real-time Sabre GDS integration, automated PNR generation, and seamless visa processing.'
+    date: '2022',
+    title: 'Founder & Publisher',
+    company: 'Hello Probash (helloprobash.com)',
+    description: 'Pioneered the leading digital media publication and diaspora news portal serving hundreds of thousands of expatriates across Oman and worldwide.'
   },
   {
     id: 3,
-    date: '2021 - Present',
-    title: 'Founder & Managing Director',
-    company: 'Hello Probash & Hello Sheba Group',
-    description: 'Built global expat support portals, digital technology studio (Hello Oman Tech), and specialized hyperlocal directories connecting hundreds of thousands.'
+    date: '2026',
+    title: 'Founder & Director',
+    company: 'Hello Probash Sheba (helloprobashsheba.com)',
+    description: 'Established an expat emergency helpline, legal aid network, document processing, and classified community services portal.'
   },
   {
     id: 4,
-    date: '2019 - Present',
-    title: 'Founder & Publisher',
-    company: 'Hello Oman Media Network',
-    description: 'Pioneered dedicated digital media channels for Bengali expatriates in Oman, establishing a trusted voice and strong grassroots presence.'
+    date: '2026',
+    title: 'Founder',
+    company: 'Hello Probash Mart (probashmart.com)',
+    description: 'Launched an international e-commerce marketplace delivering authentic homeland foods, ethnic groceries, and daily consumer essentials.'
+  },
+  {
+    id: 5,
+    date: '2026',
+    title: 'Founder',
+    company: 'Hello Carry',
+    description: 'Pioneered an expatriate logistics, passenger luggage delivery, and cross-border diaspora courier support network.'
+  },
+  {
+    id: 6,
+    date: '2026',
+    title: 'Founder & Managing Director',
+    company: 'Hello Probash Tech (probashtech.com)',
+    description: 'Full-cycle enterprise software engineering studio, mobile application development, and cloud systems architect behind the entire Hello ecosystem.'
+  },
+  {
+    id: 7,
+    date: '2026',
+    title: 'Founder',
+    company: 'Booking Sylhet (bookingsylhet.com)',
+    description: 'Dedicated regional travel, resort reservation, and domestic tourism guide portal celebrating the natural beauty of greater Sylhet.'
   }
 ];
 
@@ -340,6 +429,7 @@ function App() {
             <a href="#about">About</a>
             <a href="#social">Social Media</a>
             <a href="#ventures">Ventures (10)</a>
+            <a href="#travel">Travel</a>
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
@@ -348,11 +438,14 @@ function App() {
             <a href="https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Facebook">
               <FacebookIcon size={18} />
             </a>
+            <a href="https://www.tiktok.com/@musa_emon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="TikTok">
+              <TikTokIcon size={18} />
+            </a>
             <a href="https://www.instagram.com/musa___emon?rpxt=MTMyeG9kb3NwZHRpZg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="https://www.tiktok.com/@musa_emon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="TikTok">
-              <TikTokIcon size={18} />
+            <a href="https://www.youtube.com/@musaemon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="YouTube">
+              <YouTubeIcon size={18} />
             </a>
             <a href="https://wa.me/96878147442?text=Hello%20Musa%20Emon" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="WhatsApp">
               <MessageCircle size={18} />
@@ -517,7 +610,10 @@ function App() {
                       <div className="social-card-middle">
                         <span className="social-card-tag">{card.tag}</span>
                         <div className="social-card-handle">{card.handle}</div>
-                        <h4 className="social-card-title">{card.title}</h4>
+                        <div className="social-stat-badge">
+                          <span className="stat-primary">{card.metrics}</span>
+                          <span className="stat-secondary">{card.subMetrics}</span>
+                        </div>
                       </div>
 
                       <div className="social-card-bottom">
@@ -656,6 +752,71 @@ function App() {
           </div>
         </section>
 
+        {/* Global Travel & Expeditions Section */}
+        <section id="travel" className="section travel-section">
+          <div className="container">
+            <div className="section-header">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
+                <span className="section-subtitle">GLOBAL EXPEDITIONS & WANDERLUST</span>
+                <h2>
+                  World Traveler & <span className="text-gradient">Explorer</span>
+                </h2>
+                <p>
+                  Capturing international horizons, expat lifestyles, and cultural crossroads across the Middle East, Southeast Asia, and Eurasia.
+                </p>
+                <div className="travel-header-stats">
+                  <span className="travel-stat-pill">
+                    <Compass size={14} /> 10+ Countries Explored
+                  </span>
+                  <span className="travel-stat-pill">
+                    <Camera size={14} /> Licensed Influencer (L2644114)
+                  </span>
+                  <span className="travel-stat-pill">
+                    <Plane size={14} /> Travel & Aviation Specialist
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              className="travel-grid"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              {travelDestinations.map((dest) => (
+                <motion.div 
+                  key={dest.id} 
+                  className="travel-card"
+                  variants={fadeUpVariant}
+                >
+                  <div className="travel-card-bg">
+                    <img src={dest.image} alt={dest.country} className="travel-card-img" loading="lazy" />
+                    <div className="travel-card-overlay"></div>
+                  </div>
+
+                  <div className="travel-card-inner">
+                    <div className="travel-card-top">
+                      <div className="travel-country-pill">
+                        <span className="country-flag">{dest.flag}</span>
+                        <span>{dest.country}</span>
+                      </div>
+                      <span className="travel-year-badge">{dest.badge}</span>
+                    </div>
+
+                    <div className="travel-card-bottom">
+                      <span className="travel-tag">{dest.tag}</span>
+                      <h3 className="travel-location">{dest.location}</h3>
+                      <p className="travel-caption">{dest.caption}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* Bento Grid Expertise Section */}
         <section id="expertise" className="section">
           <div className="container">
@@ -720,13 +881,18 @@ function App() {
           <div className="container">
             <div className="section-header">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
-                <span className="section-subtitle">TRACK RECORD</span>
+                <span className="section-subtitle">BUILDING PLATFORMS FROM THE GROUND UP</span>
                 <h2>
-                  Entrepreneurial <span className="text-gradient">Journey</span>
+                  The Milestones of <span className="text-gradient">Building Platforms</span>
                 </h2>
                 <p>
-                  From a single community media portal in Oman to a multifaceted international conglomerate.
+                  Musa Emon — Architecting and scaling ventures from grassroots ideas into resilient global ecosystems.
                 </p>
+                <div className="journey-dev-badge-wrap">
+                  <span className="journey-dev-badge">
+                    <Sparkles size={14} className="sparkle-icon" /> Developed by <strong>Probash Tech</strong>
+                  </span>
+                </div>
               </motion.div>
             </div>
 
@@ -803,7 +969,7 @@ function App() {
           <div className="footer-bottom">
             <p className="copyright">© {new Date().getFullYear()} Musa Emon. All rights reserved.</p>
             <p className="developer-credit">
-              Engineered & Maintained by <a href="https://helloomantech.com" target="_blank" rel="noopener noreferrer">Hello Oman Tech</a>
+              Developed by <a href="https://probashtech.com" target="_blank" rel="noopener noreferrer"><strong>Probash Tech</strong></a>
             </p>
           </div>
         </div>
