@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+  --primary-color: #2563eb;
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #f1f5f9;
@@ -2052,24 +2053,40 @@ ul {
 }
 
 .btn-journey {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.9rem 2.2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
-  color: #ffffff;
-  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.35);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  padding: 0.95rem 2.4rem !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.45) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.btn-journey span {
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+.btn-journey svg {
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+  flex-shrink: 0;
 }
 
 .btn-journey:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.5);
-  color: #ffffff;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 14px 32px -4px rgba(37, 99, 235, 0.6) !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
 }
 
 /* Hello Carry App Status Button & Pills */
@@ -2287,12 +2304,10 @@ ul {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 62px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 -4px 25px rgba(15, 23, 42, 0.08);
+    height: 64px;
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
     z-index: 9999;
     justify-content: space-around;
     align-items: center;

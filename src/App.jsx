@@ -106,7 +106,7 @@ const socialShowcaseCards = [
     theme: 'card-insta',
     url: 'https://www.instagram.com/musa___emon/',
     actionText: 'Follow on IG',
-    image: '/social-insta.webp',
+    image: '/social-insta-musa.webp',
     tag: 'Licensed Influencer'
   },
   {
@@ -202,7 +202,7 @@ const projects = [
     description: 'A specialized international e-commerce marketplace delivering authentic homeland foods, ethnic groceries, and daily consumer essentials directly to diaspora doorsteps.',
     link: 'https://probashmart.com/',
     domain: 'probashmart.com',
-    image: '/probashmart.webp',
+    image: '/probashmart-banner.webp',
     icon: ShoppingBag,
     tags: ['E-Commerce', 'Online Grocery', 'Retail Logistics', 'B2C']
   },
@@ -773,10 +773,10 @@ function App() {
 
             {/* My Journey CTA Button */}
             <div className="travel-journey-cta">
-              <a href="#journey" className="btn btn-primary btn-journey">
-                <Award size={18} />
+              <a href="#journey" className="btn-journey">
+                <Award size={20} />
                 <span>My Journey</span>
-                <ArrowDown size={16} />
+                <ArrowDown size={18} />
               </a>
             </div>
           </div>
@@ -1014,7 +1014,7 @@ function App() {
                 <div className="journey-story-media">
                   <div className="journey-portrait-frame">
                     <img 
-                      src="/social-insta.webp" 
+                      src="/musa-journey.webp" 
                       alt="Musa Emon Journey" 
                       className="journey-portrait-img"
                       loading="lazy"
