@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   CheckCircle2, ShieldCheck, Clock, ArrowRight, 
   ExternalLink, MessageCircle, Building2, Download, 
-  ArrowLeft, FileText, Check, Phone, ChevronDown, ChevronUp,
+  FileText, Check, Phone, ChevronDown, ChevronUp,
   UserCheck, Send
 } from 'lucide-react';
 import './business-setup.css';
@@ -69,7 +69,7 @@ Please share the consultation and registration details. Thank you!`;
       {/* Top Navbar */}
       <nav className="obs-navbar">
         <div className="obs-container obs-navbar-inner">
-          <div className="obs-logo-wrap" onClick={onNavigateHome}>
+          <div className="obs-logo-wrap">
             <img 
               src="/hello-founders-logo.png" 
               alt="Hello Founders Business Solutions" 
@@ -78,9 +78,6 @@ Please share the consultation and registration details. Thank you!`;
           </div>
 
           <div className="obs-nav-actions">
-            <button onClick={onNavigateHome} className="obs-btn-back">
-              <ArrowLeft size={16} /> <span>Musa Emon Portfolio</span>
-            </button>
             <a 
               href={createWhatsAppUrl("Hello Musa Emon, I want to inquire about Oman Business Setup.")} 
               target="_blank" 
