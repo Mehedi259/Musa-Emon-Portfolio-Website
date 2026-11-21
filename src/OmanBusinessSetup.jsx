@@ -422,7 +422,7 @@ Please share the consultation and registration details. Thank you!`;
               <strong>Hello Founders Business Solutions</strong> — Trusted company formation in the Sultanate of Oman.
             </p>
             <p className="obs-footer-links">
-              Website: <a href="https://www.founderbs.com" target="_blank" rel="noopener noreferrer">www.founderbs.com</a> • WhatsApp: <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a>
+              WhatsApp Consultation: <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a>
             </p>
             <p className="obs-footer-copy">
               © {new Date().getFullYear()} Musa Emon & Hello Founders. All rights reserved.
