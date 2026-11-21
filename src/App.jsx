@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Mail, ArrowUpRight, Globe, Users, Briefcase, Zap, 
-  Radio, ShoppingBag, BookOpen, Building, MapPin, 
+  Radio, ShoppingBag, BookOpen, Building, Building2, MapPin, 
   Sparkles, Layers, Award, ChevronRight, Compass, Plane, Camera,
   User, Home, Package, ArrowDown
 } from 'lucide-react';
+import OmanBusinessSetup from './OmanBusinessSetup.jsx';
 
 // Custom SVG Icons for Facebook, TikTok, Instagram, and YouTube
 const FacebookIcon = ({ size = 20, className = "" }) => (
@@ -427,6 +428,26 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeSection, setActiveSection] = useState('about');
+  const [currentPath, setCurrentPath] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.location.pathname;
+    }
+    return '/';
+  });
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const navigateTo = (path) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -446,6 +467,17 @@ function App() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isBusinessSetup = 
+    currentPath === '/business-setup' || 
+    currentPath === '/business-setup/' || 
+    currentPath === '/oman-business-setup' || 
+    currentPath === '/oman-business-setup/' ||
+    currentPath.startsWith('/business');
+
+  if (isBusinessSetup) {
+    return <OmanBusinessSetup onNavigateHome={() => navigateTo('/')} />;
+  }
 
   const filteredProjects = activeCategory === 'All' 
     ? projects 
@@ -467,6 +499,28 @@ function App() {
             <a href="#expertise">Expertise</a>
             <a href="#journey">Journey</a>
             <a href="#contact">Contact</a>
+            <button 
+              onClick={() => navigateTo('/business-setup')}
+              style={{
+                background: 'linear-gradient(135deg, #d97706, #b45309)',
+                color: '#ffffff',
+                border: 'none',
+                padding: '6px 14px',
+                borderRadius: '20px',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                cursor: 'pointer',
+                boxShadow: '0 2px 10px rgba(217, 119, 6, 0.35)',
+                transition: 'all 0.2s ease'
+              }}
+              title="ওমানে ১০০% নিজের নামে কোম্পানি সেটআপ"
+            >
+              <span>🇴🇲 বিজনেস সেটআপ</span>
+              <span style={{ background: '#ffffff', color: '#b45309', padding: '1px 5px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: 800 }}>NEW</span>
+            </button>
           </div>
           <div className="nav-social-desktop">
             <a href="https://www.facebook.com/share/1Gdt8hxZuN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="nav-social-link" title="Facebook">
@@ -510,10 +564,56 @@ function App() {
                 I build and lead digital ventures across Media, Travel & Tourism, and Technology. Through my growing ecosystem of brands, I connect global expatriate communities, simplify travel services, and create digital solutions that empower people and businesses across borders.
               </p>
               
+              {/* Oman Business Setup Feature Hook Banner */}
+              <div 
+                onClick={() => navigateTo('/business-setup')}
+                style={{
+                  background: 'linear-gradient(90deg, rgba(217, 119, 6, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%)',
+                  border: '1px solid rgba(217, 119, 6, 0.35)',
+                  borderRadius: '12px',
+                  padding: '10px 16px',
+                  margin: '16px 0 22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px',
+                  cursor: 'pointer',
+                  maxWidth: '580px',
+                  boxShadow: '0 2px 10px rgba(217, 119, 6, 0.08)',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)', color: '#ffffff', fontSize: '0.72rem', fontWeight: 800, padding: '3px 8px', borderRadius: '6px', whiteSpace: 'nowrap' }}>
+                    🇴🇲 ওমানে বিজনেস
+                  </span>
+                  <span style={{ fontSize: '0.88rem', color: '#0f172a', fontWeight: 600 }}>
+                    ১০০% নিজের নামে কোম্পানি সেটআপ (SPC/LLC) · সরকারি ফি সহ মাত্র ১০ দিনে
+                  </span>
+                </div>
+                <ArrowUpRight size={18} color="#d97706" style={{ flexShrink: 0 }} />
+              </div>
+
               <div className="hero-buttons">
                 <a href="#ventures" className="btn btn-primary">
                   Explore 10 Ventures <ArrowUpRight size={18} />
                 </a>
+                <button 
+                  onClick={() => navigateTo('/business-setup')}
+                  className="btn btn-secondary"
+                  style={{
+                    borderColor: 'rgba(217, 119, 6, 0.4)',
+                    color: '#b45309',
+                    background: 'rgba(217, 119, 6, 0.08)',
+                    fontWeight: 600,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  <Building2 size={16} color="#d97706" />
+                  <span>Business Setup</span>
+                </button>
                 <a href="#social" className="btn btn-secondary">
                   Social Spotlight
                 </a>
@@ -1176,6 +1276,14 @@ function App() {
           <Layers size={19} />
           <span>Ventures</span>
         </a>
+        <button 
+          onClick={() => navigateTo('/business-setup')}
+          className="mobile-nav-item"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+        >
+          <Building2 size={19} color="#d97706" />
+          <span style={{ color: '#d97706', fontWeight: 700 }}>Business</span>
+        </button>
         <a 
           href="#journey" 
           className={`mobile-nav-item ${activeSection === 'journey' ? 'active' : ''}`}
