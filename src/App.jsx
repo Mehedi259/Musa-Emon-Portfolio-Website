@@ -516,9 +516,9 @@ function App() {
                 boxShadow: '0 2px 10px rgba(217, 119, 6, 0.35)',
                 transition: 'all 0.2s ease'
               }}
-              title="ওমানে ১০০% নিজের নামে কোম্পানি সেটআপ"
+              title="100% Foreign Ownership Oman Company Setup"
             >
-              <span>🇴🇲 বিজনেস সেটআপ</span>
+              <span>🇴🇲 Oman Business Setup</span>
               <span style={{ background: '#ffffff', color: '#b45309', padding: '1px 5px', borderRadius: '6px', fontSize: '0.65rem', fontWeight: 800 }}>NEW</span>
             </button>
           </div>
@@ -585,10 +585,10 @@ function App() {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)', color: '#ffffff', fontSize: '0.72rem', fontWeight: 800, padding: '3px 8px', borderRadius: '6px', whiteSpace: 'nowrap' }}>
-                    🇴🇲 ওমানে বিজনেস
+                    🇴🇲 OMAN FORMATION
                   </span>
                   <span style={{ fontSize: '0.88rem', color: '#0f172a', fontWeight: 600 }}>
-                    ১০০% নিজের নামে কোম্পানি সেটআপ (SPC/LLC) · সরকারি ফি সহ মাত্র ১০ দিনে
+                    100% Foreign Ownership Company Setup (SPC / LLC) · In 10 Business Days
                   </span>
                 </div>
                 <ArrowUpRight size={18} color="#d97706" style={{ flexShrink: 0 }} />
