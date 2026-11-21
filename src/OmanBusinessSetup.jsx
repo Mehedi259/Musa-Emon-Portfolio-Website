@@ -12,20 +12,13 @@ import './business-setup.css';
 const WHATSAPP_NUMBER = '96894578538';
 const WHATSAPP_DISPLAY = '+968 94578538';
 
-// Custom SVG Logo for Hello Founders Business Solutions
-const HelloFoundersLogo = () => (
-  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="48" height="48" rx="12" fill="url(#hfGrad)" />
-    <path d="M14 15V33M34 15V33M14 24H34" stroke="#070C18" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="24" cy="15" r="3" fill="#070C18" />
-    <defs>
-      <linearGradient id="hfGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#FDE68A" />
-        <stop offset="0.5" stopColor="#F59E0B" />
-        <stop offset="1" stopColor="#D97706" />
-      </linearGradient>
-    </defs>
-  </svg>
+// Real Hello Founders logo from brochure
+const HelloFoundersLogo = ({ height = 44 }) => (
+  <img 
+    src="/hello-founders-logo.png" 
+    alt="Hello Founders Business Solutions" 
+    style={{ height: `${height}px`, width: 'auto', objectFit: 'contain' }}
+  />
 );
 
 export default function OmanBusinessSetup({ onNavigateHome }) {
@@ -203,16 +196,11 @@ Please guide me through the registration timeline and next steps. Thank you!`;
               </div>
             </div>
 
-            {/* Right Column: Visual Showcase Card */}
+            {/* Right Column: Clean Info Card */}
             <div className="obs-hero-showcase-card">
-              <div className="obs-hero-img-wrap">
-                <img 
-                  src="/oman-skyline-hero.jpg" 
-                  alt="Muscat Modern Financial District Skyline" 
-                  className="obs-hero-img"
-                />
-                <div className="obs-hero-img-overlay"></div>
-                <div className="obs-img-badge">
+              <div className="obs-showcase-logo-header">
+                <HelloFoundersLogo height={64} />
+                <div className="obs-img-badge" style={{ position: 'relative', top: 'auto', left: 'auto', marginTop: '16px' }}>
                   <span className="obs-img-badge-dot"></span>
                   <span>MOCIIP Government Verified</span>
                 </div>
@@ -839,7 +827,7 @@ Please guide me through the registration timeline and next steps. Thank you!`;
         <div className="obs-container">
           <div className="obs-footer-inner">
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
-              <HelloFoundersLogo />
+              <HelloFoundersLogo height={50} />
             </div>
             <h3>Hello Founders Business Solutions</h3>
             <p>
